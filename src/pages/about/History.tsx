@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-export default function Solutions() {
+export default function History() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 pt-20">
       <motion.div
@@ -9,7 +9,7 @@ export default function Solutions() {
         transition={{ duration: 0.6 }}
         className="text-center"
       >
-        <h1 className="heading-2 text-dark mb-4">Solutions</h1>
+        <h1 className="heading-2 text-dark mb-4">History</h1>
         <p className="text-gray-500 text-lg">Coming Soon</p>
       </motion.div>
     </div>

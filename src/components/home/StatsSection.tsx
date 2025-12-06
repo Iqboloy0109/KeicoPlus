@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useTranslation } from 'react-i18next';
 import CountUp from 'react-countup';
 import { TrendingDown, Cpu, Users, Leaf } from 'lucide-react';
-import { stats } from '../../data/stats';
 
 const iconMap: { [key: string]: React.ReactNode } = {
   TrendingDown: <TrendingDown size={32} />,
@@ -12,10 +12,42 @@ const iconMap: { [key: string]: React.ReactNode } = {
 };
 
 export default function StatsSection() {
+  const { t } = useTranslation();
   const { ref, inView } = useInView({
     threshold: 0.3,
     triggerOnce: true
   });
+
+  const stats = [
+    {
+      id: 1,
+      value: 40,
+      suffix: '%+',
+      label: t('stats.energySaved'),
+      icon: 'TrendingDown'
+    },
+    {
+      id: 2,
+      value: 10000,
+      suffix: '+',
+      label: t('stats.devicesConnected'),
+      icon: 'Cpu'
+    },
+    {
+      id: 3,
+      value: 500,
+      suffix: '+',
+      label: t('stats.activeClients'),
+      icon: 'Users'
+    },
+    {
+      id: 4,
+      value: 1000,
+      suffix: '+ tons',
+      label: t('stats.co2Reduced'),
+      icon: 'Leaf'
+    }
+  ];
 
   return (
     <section
@@ -37,14 +69,13 @@ export default function StatsSection() {
           className="text-center mb-16"
         >
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-            Our Impact
+            {t('stats.badge')}
           </span>
           <h2 className="heading-2 text-white mt-4 mb-6">
-            Numbers That Speak
+            {t('stats.title')}
           </h2>
           <p className="text-body-light max-w-2xl mx-auto">
-            See the real-world impact of our energy management solutions
-            across industries worldwide.
+            {t('stats.description')}
           </p>
         </motion.div>
 

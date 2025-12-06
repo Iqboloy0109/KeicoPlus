@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useTranslation } from 'react-i18next';
 import { Plug, BarChart3, Brain, Leaf } from 'lucide-react';
-import { steps } from '../../data/steps';
 
 const iconMap: { [key: string]: React.ReactNode } = {
   Plug: <Plug size={32} />,
@@ -11,10 +11,38 @@ const iconMap: { [key: string]: React.ReactNode } = {
 };
 
 export default function HowItWorks() {
+  const { t } = useTranslation();
   const { ref, inView } = useInView({
     threshold: 0.2,
     triggerOnce: true
   });
+
+  const steps = [
+    {
+      id: 1,
+      title: t('howItWorks.step1.title'),
+      description: t('howItWorks.step1.description'),
+      icon: 'Plug'
+    },
+    {
+      id: 2,
+      title: t('howItWorks.step2.title'),
+      description: t('howItWorks.step2.description'),
+      icon: 'BarChart3'
+    },
+    {
+      id: 3,
+      title: t('howItWorks.step3.title'),
+      description: t('howItWorks.step3.description'),
+      icon: 'Brain'
+    },
+    {
+      id: 4,
+      title: t('howItWorks.step4.title'),
+      description: t('howItWorks.step4.description'),
+      icon: 'Leaf'
+    }
+  ];
 
   return (
     <section ref={ref} className="section-padding bg-gray-50">
@@ -27,14 +55,13 @@ export default function HowItWorks() {
           className="text-center mb-16"
         >
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-            How It Works
+            {t('howItWorks.badge')}
           </span>
           <h2 className="heading-2 text-dark mt-4 mb-6">
-            Simple Steps to Smart Energy
+            {t('howItWorks.title')}
           </h2>
           <p className="text-body max-w-2xl mx-auto">
-            Get started with Keico Plus in four easy steps and begin your journey
-            to smarter, more efficient energy management.
+            {t('howItWorks.description')}
           </p>
         </motion.div>
 

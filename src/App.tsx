@@ -1,6 +1,17 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Layout } from './components/layout';
-import { Home, About, Services, Solutions, Contact } from './pages';
+import {
+  Home,
+  Services,
+  Technology,
+  News,
+  Contact,
+  Login,
+  KeicoPlus,
+  Values,
+  ExecutiveIntro,
+  History
+} from './pages';
 
 function App() {
   return (
@@ -8,10 +19,19 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
+
+          {/* About Company routes */}
+          <Route path="about/keico-plus" element={<KeicoPlus />} />
+          <Route path="about/values" element={<Values />} />
+          <Route path="about/executive-intro" element={<ExecutiveIntro />} />
+          <Route path="about/history" element={<History />} />
+
+          {/* Other routes */}
           <Route path="services" element={<Services />} />
-          <Route path="solutions" element={<Solutions />} />
+          <Route path="technology" element={<Technology />} />
+          <Route path="news" element={<News />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="login" element={<Login />} />
         </Route>
       </Routes>
     </BrowserRouter>

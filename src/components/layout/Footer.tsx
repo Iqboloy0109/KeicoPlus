@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import {
   Facebook,
   Twitter,
@@ -11,6 +12,8 @@ import {
 } from 'lucide-react';
 
 export default function Footer() {
+  const { t } = useTranslation();
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -25,8 +28,7 @@ export default function Footer() {
               <span className="text-primary">Keico</span> Plus
             </div>
             <p className="text-gray-400 leading-relaxed">
-              AI-powered IoT energy management platform helping businesses
-              reduce costs and environmental impact through intelligent automation.
+              {t('footer.description')}
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-primary transition-colors">
@@ -44,63 +46,58 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* About Company */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-6">{t('footer.aboutCompany')}</h4>
             <ul className="space-y-4">
               <li>
-                <Link to="/" className="text-gray-400 hover:text-primary transition-colors">
-                  Home
+                <Link to="/about/keico-plus" className="text-gray-400 hover:text-primary transition-colors">
+                  {t('nav.keicoPlus')}
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-gray-400 hover:text-primary transition-colors">
-                  About Us
+                <Link to="/about/values" className="text-gray-400 hover:text-primary transition-colors">
+                  {t('nav.values')}
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-gray-400 hover:text-primary transition-colors">
-                  Services
+                <Link to="/about/executive-intro" className="text-gray-400 hover:text-primary transition-colors">
+                  {t('nav.executiveIntro')}
                 </Link>
               </li>
               <li>
-                <Link to="/solutions" className="text-gray-400 hover:text-primary transition-colors">
-                  Solutions
+                <Link to="/about/history" className="text-gray-400 hover:text-primary transition-colors">
+                  {t('nav.history')}
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Services</h4>
+            <h4 className="text-lg font-semibold mb-6">{t('footer.quickLinks')}</h4>
             <ul className="space-y-4">
               <li>
-                <a href="#" className="text-gray-400 hover:text-primary transition-colors">
-                  AI Analytics
-                </a>
+                <Link to="/services" className="text-gray-400 hover:text-primary transition-colors">
+                  {t('nav.serviceSolution')}
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-primary transition-colors">
-                  Real-Time Monitoring
-                </a>
+                <Link to="/news" className="text-gray-400 hover:text-primary transition-colors">
+                  {t('nav.news')}
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-primary transition-colors">
-                  Smart Control
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-primary transition-colors">
-                  Energy Optimization
-                </a>
+                <Link to="/contact" className="text-gray-400 hover:text-primary transition-colors">
+                  {t('nav.contact')}
+                </Link>
               </li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Contact Us</h4>
+            <h4 className="text-lg font-semibold mb-6">{t('footer.contactUs')}</h4>
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
                 <MapPin size={20} className="text-primary mt-1 flex-shrink-0" />
@@ -127,14 +124,14 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-16 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} Keico Plus. All rights reserved.
+            &copy; {new Date().getFullYear()} {t('footer.copyright')}
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="text-gray-400 text-sm hover:text-primary transition-colors">
-              Privacy Policy
+              {t('footer.privacyPolicy')}
             </a>
             <a href="#" className="text-gray-400 text-sm hover:text-primary transition-colors">
-              Terms of Service
+              {t('footer.termsOfService')}
             </a>
           </div>
         </div>

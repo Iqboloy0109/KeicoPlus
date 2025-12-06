@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useTranslation } from 'react-i18next';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 
@@ -18,6 +19,7 @@ const partners = [
 ];
 
 export default function PartnersCarousel() {
+  const { t } = useTranslation();
   const { ref, inView } = useInView({
     threshold: 0.2,
     triggerOnce: true
@@ -34,7 +36,7 @@ export default function PartnersCarousel() {
           className="text-center mb-12"
         >
           <p className="text-gray-500 font-medium">
-            Trusted by industry leaders worldwide
+            {t('partners.title')}
           </p>
         </motion.div>
 

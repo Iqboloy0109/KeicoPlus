@@ -1,13 +1,40 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown, Globe, User } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { navLinks } from '../../data/navigation';
+import { useTranslation } from 'react-i18next';
 
 export default function Navbar() {
+  const { t, i18n } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [mobileDropdownOpen, setMobileDropdownOpen] = useState<string | null>(null);
+  const [langDropdownOpen, setLangDropdownOpen] = useState(false);
   const location = useLocation();
+
+  const navLinks = [
+    {
+      label: t('nav.aboutCompany'),
+      dropdown: [
+        { label: t('nav.keicoPlus'), href: '/about/keico-plus' },
+        { label: t('nav.values'), href: '/about/values' },
+        { label: t('nav.executiveIntro'), href: '/about/executive-intro' },
+        { label: t('nav.history'), href: '/about/history' }
+      ]
+    },
+    { label: t('nav.serviceSolution'), href: '/services' },
+    { label: t('nav.technology'), href: '/technology' },
+    { label: t('nav.news'), href: '/news' },
+    { label: t('nav.contact'), href: '/contact' }
+  ];
+
+  const languages = [
+    { code: 'en', label: 'English', flag: '🇺🇸' },
+    { code: 'ko', label: '한국어', flag: '🇰🇷' }
+  ];
+
+  const currentLang = languages.find(l => l.code === i18n.language) || languages[0];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,7 +47,28 @@ export default function Navbar() {
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
+    setOpenDropdown(null);
+    setMobileDropdownOpen(null);
+    setLangDropdownOpen(false);
   }, [location]);
+
+  const handleDropdownEnter = (label: string) => {
+    setOpenDropdown(label);
+  };
+
+  const handleDropdownLeave = () => {
+    setOpenDropdown(null);
+  };
+
+  const toggleMobileDropdown = (label: string) => {
+    setMobileDropdownOpen(mobileDropdownOpen === label ? null : label);
+  };
+
+  const changeLanguage = (langCode: string) => {
+    i18n.changeLanguage(langCode);
+    localStorage.setItem('language', langCode);
+    setLangDropdownOpen(false);
+  };
 
   return (
     <header
@@ -44,21 +92,124 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  isScrolled ? 'text-gray-700' : 'text-white'
-                } ${location.pathname === link.href ? 'text-primary' : ''}`}
+              <div
+                key={link.label}
+                className="relative"
+                onMouseEnter={() => link.dropdown && handleDropdownEnter(link.label)}
+                onMouseLeave={handleDropdownLeave}
               >
-                {link.label}
-              </Link>
+                {link.dropdown ? (
+                  <>
+                    <button
+                      className={`flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary ${
+                        isScrolled ? 'text-gray-700' : 'text-white'
+                      }`}
+                    >
+                      {link.label}
+                      <ChevronDown
+                        size={16}
+                        className={`transition-transform duration-200 ${
+                          openDropdown === link.label ? 'rotate-180' : ''
+                        }`}
+                      />
+                    </button>
+
+                    {/* Dropdown Menu */}
+                    <AnimatePresence>
+                      {openDropdown === link.label && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 10 }}
+                          transition={{ duration: 0.2 }}
+                          className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden"
+                        >
+                          <div className="py-2">
+                            {link.dropdown.map((subLink) => (
+                              <Link
+                                key={subLink.href}
+                                to={subLink.href}
+                                className={`block px-4 py-3 text-sm text-gray-700 hover:bg-primary/10 hover:text-primary transition-colors ${
+                                  location.pathname === subLink.href ? 'bg-primary/10 text-primary' : ''
+                                }`}
+                              >
+                                {subLink.label}
+                              </Link>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </>
+                ) : (
+                  <Link
+                    to={link.href || '/'}
+                    className={`text-sm font-medium transition-colors hover:text-primary ${
+                      isScrolled ? 'text-gray-700' : 'text-white'
+                    } ${location.pathname === link.href ? 'text-primary' : ''}`}
+                  >
+                    {link.label}
+                  </Link>
+                )}
+              </div>
             ))}
-            <Link
-              to="/contact"
-              className="btn-primary text-sm"
+
+            {/* Language Switcher */}
+            <div
+              className="relative"
+              onMouseEnter={() => setLangDropdownOpen(true)}
+              onMouseLeave={() => setLangDropdownOpen(false)}
             >
-              Get Started
+              <button
+                className={`flex items-center gap-2 text-sm font-medium transition-colors hover:text-primary ${
+                  isScrolled ? 'text-gray-700' : 'text-white'
+                }`}
+              >
+                <Globe size={18} />
+                <span>{currentLang.flag}</span>
+                <ChevronDown
+                  size={14}
+                  className={`transition-transform duration-200 ${
+                    langDropdownOpen ? 'rotate-180' : ''
+                  }`}
+                />
+              </button>
+
+              <AnimatePresence>
+                {langDropdownOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute top-full right-0 mt-2 w-40 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden"
+                  >
+                    <div className="py-2">
+                      {languages.map((lang) => (
+                        <button
+                          key={lang.code}
+                          onClick={() => changeLanguage(lang.code)}
+                          className={`w-full flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-primary/10 hover:text-primary transition-colors ${
+                            i18n.language === lang.code ? 'bg-primary/10 text-primary' : ''
+                          }`}
+                        >
+                          <span className="text-lg">{lang.flag}</span>
+                          {lang.label}
+                        </button>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* Login Button */}
+            <Link
+              to="/login"
+              className="flex items-center gap-2 btn-primary text-sm"
+            >
+              <User size={16} />
+              {t('nav.login')}
             </Link>
           </div>
 
@@ -83,23 +234,87 @@ export default function Navbar() {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-white border-t"
           >
-            <div className="container-custom py-4 space-y-4">
+            <div className="container-custom py-4 space-y-2">
               {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  className={`block text-gray-700 font-medium hover:text-primary ${
-                    location.pathname === link.href ? 'text-primary' : ''
-                  }`}
-                >
-                  {link.label}
-                </Link>
+                <div key={link.label}>
+                  {link.dropdown ? (
+                    <>
+                      <button
+                        onClick={() => toggleMobileDropdown(link.label)}
+                        className="flex items-center justify-between w-full py-2 text-gray-700 font-medium hover:text-primary"
+                      >
+                        {link.label}
+                        <ChevronDown
+                          size={18}
+                          className={`transition-transform duration-200 ${
+                            mobileDropdownOpen === link.label ? 'rotate-180' : ''
+                          }`}
+                        />
+                      </button>
+                      <AnimatePresence>
+                        {mobileDropdownOpen === link.label && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: 'auto' }}
+                            exit={{ opacity: 0, height: 0 }}
+                            className="pl-4 space-y-1 overflow-hidden"
+                          >
+                            {link.dropdown.map((subLink) => (
+                              <Link
+                                key={subLink.href}
+                                to={subLink.href}
+                                className={`block py-2 text-gray-600 hover:text-primary ${
+                                  location.pathname === subLink.href ? 'text-primary' : ''
+                                }`}
+                              >
+                                {subLink.label}
+                              </Link>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </>
+                  ) : (
+                    <Link
+                      to={link.href || '/'}
+                      className={`block py-2 text-gray-700 font-medium hover:text-primary ${
+                        location.pathname === link.href ? 'text-primary' : ''
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  )}
+                </div>
               ))}
+
+              {/* Mobile Language Switcher */}
+              <div className="border-t pt-4 mt-4">
+                <p className="text-sm text-gray-500 mb-2">Language / 언어</p>
+                <div className="flex gap-2">
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => changeLanguage(lang.code)}
+                      className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm ${
+                        i18n.language === lang.code
+                          ? 'bg-primary text-white'
+                          : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                      }`}
+                    >
+                      <span>{lang.flag}</span>
+                      {lang.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Mobile Login Button */}
               <Link
-                to="/contact"
-                className="btn-primary inline-block text-sm"
+                to="/login"
+                className="flex items-center justify-center gap-2 btn-primary w-full text-sm mt-4"
               >
-                Get Started
+                <User size={16} />
+                {t('nav.login')}
               </Link>
             </div>
           </motion.div>

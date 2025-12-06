@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useTranslation } from 'react-i18next';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { Brain, Activity, Cpu, Zap, Settings, ArrowRight } from 'lucide-react';
-import { services } from '../../data/services';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -18,10 +18,44 @@ const iconMap: { [key: string]: React.ReactNode } = {
 };
 
 export default function ServicesCarousel() {
+  const { t } = useTranslation();
   const { ref, inView } = useInView({
     threshold: 0.1,
     triggerOnce: true
   });
+
+  const services = [
+    {
+      id: 1,
+      title: t('services.service1.title'),
+      description: t('services.service1.description'),
+      icon: 'Brain'
+    },
+    {
+      id: 2,
+      title: t('services.service2.title'),
+      description: t('services.service2.description'),
+      icon: 'Activity'
+    },
+    {
+      id: 3,
+      title: t('services.service3.title'),
+      description: t('services.service3.description'),
+      icon: 'Cpu'
+    },
+    {
+      id: 4,
+      title: t('services.service4.title'),
+      description: t('services.service4.description'),
+      icon: 'Zap'
+    },
+    {
+      id: 5,
+      title: t('services.service5.title'),
+      description: t('services.service5.description'),
+      icon: 'Settings'
+    }
+  ];
 
   return (
     <section ref={ref} className="section-padding bg-dark">
@@ -34,14 +68,13 @@ export default function ServicesCarousel() {
           className="text-center mb-16"
         >
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-            Our Services
+            {t('services.badge')}
           </span>
           <h2 className="heading-2 text-white mt-4 mb-6">
-            Comprehensive Energy Solutions
+            {t('services.title')}
           </h2>
           <p className="text-body-light max-w-2xl mx-auto">
-            Discover our suite of AI-powered tools designed to optimize your energy
-            consumption and reduce operational costs.
+            {t('services.description')}
           </p>
         </motion.div>
 
@@ -84,7 +117,7 @@ export default function ServicesCarousel() {
                     href="#"
                     className="inline-flex items-center gap-2 text-primary font-medium group-hover:gap-3 transition-all duration-300"
                   >
-                    Learn More <ArrowRight size={16} />
+                    {t('services.learnMore')} <ArrowRight size={16} />
                   </a>
                 </div>
               </SwiperSlide>

@@ -1,19 +1,21 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useTranslation } from 'react-i18next';
 import { Check } from 'lucide-react';
 
-const features = [
-  'AI-driven energy optimization',
-  'Real-time monitoring & analytics',
-  'Seamless IoT device integration',
-  'Predictive maintenance alerts'
-];
-
 export default function AboutSection() {
+  const { t } = useTranslation();
   const { ref, inView } = useInView({
     threshold: 0.2,
     triggerOnce: true
   });
+
+  const features = [
+    t('about.feature1'),
+    t('about.feature2'),
+    t('about.feature3'),
+    t('about.feature4')
+  ];
 
   return (
     <section ref={ref} className="section-padding bg-white">
@@ -45,20 +47,16 @@ export default function AboutSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              About Keico Plus
+              {t('about.badge')}
             </span>
             <h2 className="heading-2 text-dark mt-4 mb-6">
-              Revolutionizing Energy Management with AI
+              {t('about.title')}
             </h2>
             <p className="text-body mb-6">
-              Keico Plus is at the forefront of smart energy solutions, combining
-              cutting-edge AI technology with IoT connectivity to help businesses
-              and organizations optimize their energy consumption.
+              {t('about.description1')}
             </p>
             <p className="text-body mb-8">
-              Our platform provides real-time insights, automated controls, and
-              predictive analytics that empower you to make smarter energy
-              decisions while reducing costs and environmental impact.
+              {t('about.description2')}
             </p>
 
             {/* Feature List */}
@@ -80,13 +78,13 @@ export default function AboutSection() {
             </ul>
 
             <motion.a
-              href="/about"
+              href="/about/keico-plus"
               initial={{ opacity: 0 }}
               animate={inView ? { opacity: 1 } : {}}
               transition={{ duration: 0.5, delay: 0.8 }}
               className="btn-primary inline-block"
             >
-              Learn More About Us
+              {t('about.learnMore')}
             </motion.a>
           </motion.div>
         </div>

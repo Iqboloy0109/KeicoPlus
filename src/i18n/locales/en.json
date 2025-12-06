@@ -1,0 +1,145 @@
+{
+  "nav": {
+    "aboutCompany": "About Company",
+    "keicoPlus": "KEICO PLUS",
+    "values": "Values",
+    "executiveIntro": "Executive Intro",
+    "history": "History",
+    "serviceSolution": "Service & Solution",
+    "technology": "Technology",
+    "news": "News",
+    "contact": "Contact",
+    "login": "Login"
+  },
+  "hero": {
+    "badge": "AI-Powered IoT Platform",
+    "title1": "Smart Energy.",
+    "title2": "Smarter Future.",
+    "description": "Transform your energy management with AI-driven insights. Reduce costs by up to 40% while contributing to a sustainable future.",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More"
+  },
+  "about": {
+    "badge": "About Keico Plus",
+    "title": "Revolutionizing Energy Management with AI",
+    "description1": "Keico Plus is at the forefront of smart energy solutions, combining cutting-edge AI technology with IoT connectivity to help businesses and organizations optimize their energy consumption.",
+    "description2": "Our platform provides real-time insights, automated controls, and predictive analytics that empower you to make smarter energy decisions while reducing costs and environmental impact.",
+    "feature1": "AI-driven energy optimization",
+    "feature2": "Real-time monitoring & analytics",
+    "feature3": "Seamless IoT device integration",
+    "feature4": "Predictive maintenance alerts",
+    "learnMore": "Learn More About Us"
+  },
+  "services": {
+    "badge": "Our Services",
+    "title": "Comprehensive Energy Solutions",
+    "description": "Discover our suite of AI-powered tools designed to optimize your energy consumption and reduce operational costs.",
+    "learnMore": "Learn More",
+    "service1": {
+      "title": "AI-Powered Analytics",
+      "description": "Advanced machine learning algorithms analyze your energy patterns to identify optimization opportunities and predict future consumption."
+    },
+    "service2": {
+      "title": "Real-Time Monitoring",
+      "description": "Monitor your entire energy infrastructure in real-time with intuitive dashboards and instant alerts for anomalies."
+    },
+    "service3": {
+      "title": "Smart Device Control",
+      "description": "Seamlessly integrate and control all your IoT devices from a single platform with automated scheduling and optimization."
+    },
+    "service4": {
+      "title": "Energy Optimization",
+      "description": "Automatically optimize energy usage across your facilities with AI-driven recommendations and automated controls."
+    },
+    "service5": {
+      "title": "Predictive Maintenance",
+      "description": "Prevent equipment failures and reduce downtime with AI-powered predictive maintenance alerts and insights."
+    }
+  },
+  "howItWorks": {
+    "badge": "How It Works",
+    "title": "Simple Steps to Smart Energy",
+    "description": "Get started with Keico Plus in four easy steps and begin your journey to smarter, more efficient energy management.",
+    "step1": {
+      "title": "Connect Devices",
+      "description": "Easily integrate your IoT sensors and smart devices with our platform."
+    },
+    "step2": {
+      "title": "Monitor Usage",
+      "description": "Track energy consumption in real-time across all connected systems."
+    },
+    "step3": {
+      "title": "AI Analysis",
+      "description": "Our AI analyzes patterns and identifies optimization opportunities."
+    },
+    "step4": {
+      "title": "Save Energy",
+      "description": "Implement recommendations and watch your energy costs decrease."
+    }
+  },
+  "stats": {
+    "badge": "Our Impact",
+    "title": "Numbers That Speak",
+    "description": "See the real-world impact of our energy management solutions across industries worldwide.",
+    "energySaved": "Energy Saved",
+    "devicesConnected": "Devices Connected",
+    "activeClients": "Active Clients",
+    "co2Reduced": "CO2 Reduced"
+  },
+  "caseStudies": {
+    "badge": "Case Studies",
+    "title": "Success Stories",
+    "description": "Discover how leading organizations have transformed their energy management with Keico Plus.",
+    "readCaseStudy": "Read Case Study",
+    "viewAll": "View All Case Studies",
+    "case1": {
+      "title": "Smart Office Building Reduces Energy by 40%",
+      "category": "Commercial",
+      "description": "A 50-story office complex in Seoul implemented Keico Plus to optimize HVAC and lighting systems, achieving significant cost savings."
+    },
+    "case2": {
+      "title": "Manufacturing Plant Achieves Net Zero",
+      "category": "Industrial",
+      "description": "Leading electronics manufacturer integrated IoT sensors across production lines to monitor and optimize energy consumption."
+    },
+    "case3": {
+      "title": "Smart City Initiative Powers 10,000 Homes",
+      "category": "Smart City",
+      "description": "Municipal government deployed Keico Plus across residential areas to create an intelligent energy grid with real-time optimization."
+    }
+  },
+  "partners": {
+    "title": "Trusted by industry leaders worldwide"
+  },
+  "cta": {
+    "badge": "Get Started Today",
+    "title1": "Ready to Transform Your",
+    "title2": "Energy Management?",
+    "description": "Join hundreds of businesses already saving energy and reducing costs with Keico Plus. Schedule a demo today and see the difference.",
+    "requestDemo": "Request a Demo",
+    "contactSales": "Contact Sales",
+    "freeConsultation": "Free Consultation",
+    "noCreditCard": "No Credit Card Required",
+    "support247": "24/7 Support"
+  },
+  "footer": {
+    "description": "AI-powered IoT energy management platform helping businesses reduce costs and environmental impact through intelligent automation.",
+    "aboutCompany": "About Company",
+    "quickLinks": "Quick Links",
+    "contactUs": "Contact Us",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "copyright": "Keico Plus. All rights reserved."
+  },
+  "pages": {
+    "comingSoon": "Coming Soon",
+    "keicoPlus": "KEICO PLUS",
+    "values": "Values",
+    "executiveIntro": "Executive Intro",
+    "history": "History",
+    "services": "Service & Solution",
+    "technology": "Technology",
+    "news": "News",
+    "contact": "Contact Us"
+  }
+}

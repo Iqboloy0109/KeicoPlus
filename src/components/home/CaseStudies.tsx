@@ -1,13 +1,38 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useTranslation } from 'react-i18next';
 import { ArrowRight } from 'lucide-react';
-import { caseStudies } from '../../data/caseStudies';
 
 export default function CaseStudies() {
+  const { t } = useTranslation();
   const { ref, inView } = useInView({
     threshold: 0.1,
     triggerOnce: true
   });
+
+  const caseStudies = [
+    {
+      id: 1,
+      title: t('caseStudies.case1.title'),
+      category: t('caseStudies.case1.category'),
+      description: t('caseStudies.case1.description'),
+      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80'
+    },
+    {
+      id: 2,
+      title: t('caseStudies.case2.title'),
+      category: t('caseStudies.case2.category'),
+      description: t('caseStudies.case2.description'),
+      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80'
+    },
+    {
+      id: 3,
+      title: t('caseStudies.case3.title'),
+      category: t('caseStudies.case3.category'),
+      description: t('caseStudies.case3.description'),
+      image: 'https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=600&q=80'
+    }
+  ];
 
   return (
     <section ref={ref} className="section-padding bg-white">
@@ -20,14 +45,13 @@ export default function CaseStudies() {
           className="text-center mb-16"
         >
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-            Case Studies
+            {t('caseStudies.badge')}
           </span>
           <h2 className="heading-2 text-dark mt-4 mb-6">
-            Success Stories
+            {t('caseStudies.title')}
           </h2>
           <p className="text-body max-w-2xl mx-auto">
-            Discover how leading organizations have transformed their energy
-            management with Keico Plus.
+            {t('caseStudies.description')}
           </p>
         </motion.div>
 
@@ -67,7 +91,7 @@ export default function CaseStudies() {
                 href="#"
                 className="inline-flex items-center gap-2 text-primary font-medium group-hover:gap-3 transition-all duration-300"
               >
-                Read Case Study <ArrowRight size={16} />
+                {t('caseStudies.readCaseStudy')} <ArrowRight size={16} />
               </a>
             </motion.article>
           ))}
@@ -81,10 +105,10 @@ export default function CaseStudies() {
           className="text-center mt-12"
         >
           <a
-            href="/solutions"
+            href="/services"
             className="btn-primary inline-flex items-center gap-2"
           >
-            View All Case Studies <ArrowRight size={18} />
+            {t('caseStudies.viewAll')} <ArrowRight size={18} />
           </a>
         </motion.div>
       </div>

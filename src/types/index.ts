@@ -34,7 +34,13 @@ export interface Step {
   icon: string;
 }
 
-export interface NavLink {
+export interface NavSubLink {
   label: string;
   href: string;
+}
+
+export interface NavLink {
+  label: string;
+  href?: string;
+  dropdown?: NavSubLink[];
 }

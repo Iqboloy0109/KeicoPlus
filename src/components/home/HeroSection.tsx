@@ -1,12 +1,15 @@
-import { motion } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { motion } from "framer-motion";
+import { ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function HeroSection() {
+  const { t } = useTranslation();
+
   const scrollToNext = () => {
     window.scrollTo({
       top: window.innerHeight,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   };
 
@@ -14,7 +17,6 @@ export default function HeroSection() {
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Video/Image Background */}
       <div className="absolute inset-0 z-0">
-        {/* Using Pexels free video - Smart City / Technology theme */}
         <video
           autoPlay
           muted
@@ -23,9 +25,11 @@ export default function HeroSection() {
           className="w-full h-full object-cover"
           poster="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1920"
         >
-          <source src="https://videos.pexels.com/video-files/3130284/3130284-hd_1920_1080_30fps.mp4" type="video/mp4" />
+          <source
+            src="https://videos.pexels.com/video-files/3130284/3130284-hd_1920_1080_30fps.mp4"
+            type="video/mp4"
+          />
         </video>
-        {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-dark/90 via-dark/70 to-dark/50" />
       </div>
 
@@ -43,7 +47,7 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="inline-block px-4 py-2 bg-primary/20 text-primary rounded-full text-sm font-medium mb-6"
           >
-            AI-Powered IoT Platform
+            {t("hero.badge")}
           </motion.span>
 
           <motion.h1
@@ -52,9 +56,9 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="heading-1 text-white mb-6"
           >
-            Smart Energy.
+            {t("hero.title1")}
             <br />
-            <span className="text-gradient">Smarter Future.</span>
+            <span className="text-gradient">{t("hero.title2")}</span>
           </motion.h1>
 
           <motion.p
@@ -63,8 +67,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-body-light text-lg md:text-xl mb-8 max-w-2xl"
           >
-            Transform your energy management with AI-driven insights.
-            Reduce costs by up to 40% while contributing to a sustainable future.
+            {t("hero.description")}
           </motion.p>
 
           <motion.div
@@ -74,10 +77,10 @@ export default function HeroSection() {
             className="flex flex-col sm:flex-row gap-4"
           >
             <Link to="/contact" className="btn-primary text-center">
-              Get Started
+              {t("hero.getStarted")}
             </Link>
             <Link to="/services" className="btn-secondary text-center">
-              Learn More
+              {t("hero.learnMore")}
             </Link>
           </motion.div>
         </motion.div>

@@ -1,5 +1,9 @@
 export { default as Home } from './Home';
-export { default as About } from './About';
 export { default as Services } from './Services';
-export { default as Solutions } from './Solutions';
+export { default as Technology } from './Technology';
+export { default as News } from './News';
 export { default as Contact } from './Contact';
+export { default as Login } from './Login';
+
+// About Company pages
+export { KeicoPlus, Values, ExecutiveIntro, History } from './about';

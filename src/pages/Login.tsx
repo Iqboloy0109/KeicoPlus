@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
-export default function About() {
+export default function Login() {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 pt-20">
       <motion.div
@@ -9,8 +12,8 @@ export default function About() {
         transition={{ duration: 0.6 }}
         className="text-center"
       >
-        <h1 className="heading-2 text-dark mb-4">About Us</h1>
-        <p className="text-gray-500 text-lg">Coming Soon</p>
+        <h1 className="heading-2 text-dark mb-4">{t('nav.login')}</h1>
+        <p className="text-gray-500 text-lg">{t('pages.comingSoon')}</p>
       </motion.div>
     </div>
   );
