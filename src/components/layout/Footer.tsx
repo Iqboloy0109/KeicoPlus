@@ -16,7 +16,7 @@ export default function Footer() {
   const { t } = useTranslation();
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "instant" });
   };
 
   return (
@@ -146,7 +146,7 @@ export default function Footer() {
               <li className="flex items-start space-x-3">
                 <MapPin size={20} className="text-primary mt-1 flex-shrink-0" />
                 <span className="text-gray-400">
-                  123 Innovation Drive, Tech Valley, Seoul, South Korea
+                  경기도 파주시 광인사길 103, 201ㆍ203
                 </span>
               </li>
               <li className="flex items-center space-x-3">
@@ -155,7 +155,7 @@ export default function Footer() {
                   href="tel:+8201012345678"
                   className="text-gray-400 hover:text-primary transition-colors"
                 >
-                  +82 010-1234-5678
+                  +82 02-6739-0125
                 </a>
               </li>
               <li className="flex items-center space-x-3">

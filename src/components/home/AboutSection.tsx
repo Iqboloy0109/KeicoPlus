@@ -37,7 +37,7 @@ export default function AboutSection() {
             </div>
             {/* Decorative Elements */}
             <div className="absolute -bottom-6 -left-6 w-72 h-72 bg-primary/10 rounded-full -z-0" />
-            <div className="absolute -top-6 -right-6 w-48 h-48 bg-accent-green/10 rounded-full -z-0" />
+            <div className="absolute -top-6 -right-6 w-48 h-48 bg-primary-light/10 rounded-full -z-0" />
           </motion.div>
 
           {/* Content */}

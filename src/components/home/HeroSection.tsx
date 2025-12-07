@@ -9,27 +9,25 @@ const slides = [
     video:
       "https://videos.pexels.com/video-files/3130284/3130284-hd_1920_1080_30fps.mp4",
     badge: "hero.badge",
-    title1: "hero.title1",
-    title2: "hero.title2",
-    description: "hero.description",
+    title1: "Smart Energy,",
+    title2: "Sustainable Future",
+    description: "우리가 에너지를 지능화하고, 지속 가능한 미래를 창조합니다.",
   },
   {
     video:
       "https://videos.pexels.com/video-files/7579968/7579968-hd_1920_1080_25fps.mp4",
     badge: "IoT Energy Solutions",
-    title1: "Smart Buildings,",
-    title2: "Smarter Energy",
-    description:
-      "Harness the power of IoT sensors and AI-driven analytics to optimize energy consumption in real-time across your entire facility.",
+    title1: "Smart Energy,",
+    title2: "Sustainable Future",
+    description: "우리가 에너지를 지능화하고, 지속 가능한 미래를 창조합니다.",
   },
   {
     video:
       "https://videos.pexels.com/video-files/3129671/3129671-hd_1920_1080_30fps.mp4",
     badge: "Sustainable Future",
-    title1: "Reduce Costs,",
-    title2: "Save the Planet",
-    description:
-      "Our intelligent energy management platform helps businesses cut energy costs by up to 40% while reducing their carbon footprint.",
+    title1: "Smart Energy,",
+    title2: "Sustainable Future",
+    description: "우리가 에너지를 지능화하고, 지속 가능한 미래를 창조합니다.",
   },
 ];
 
@@ -140,9 +138,6 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <Link to="/contact" className="btn-primary text-center">
-                {t("hero.getStarted")}
-              </Link>
               <Link to="/services" className="btn-secondary text-center">
                 {t("hero.learnMore")}
               </Link>

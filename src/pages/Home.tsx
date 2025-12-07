@@ -3,6 +3,7 @@ import {
   AboutSection,
   HowItWorks,
   SolutionsPanel,
+  ContactSection,
 } from '../components/home';
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       <AboutSection />
       <SolutionsPanel />
       <HowItWorks />
+      <ContactSection />
     </>
   );
 }
