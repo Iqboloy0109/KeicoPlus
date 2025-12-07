@@ -1,12 +1,8 @@
 import {
   HeroSection,
   AboutSection,
-  ServicesCarousel,
   HowItWorks,
-  StatsSection,
-  CaseStudies,
-  PartnersCarousel,
-  CTASection
+  SolutionsPanel,
 } from '../components/home';
 
 export default function Home() {
@@ -14,12 +10,8 @@ export default function Home() {
     <>
       <HeroSection />
       <AboutSection />
-      <ServicesCarousel />
+      <SolutionsPanel />
       <HowItWorks />
-      <StatsSection />
-      <CaseStudies />
-      <PartnersCarousel />
-      <CTASection />
     </>
   );
 }
