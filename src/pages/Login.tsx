@@ -1,12 +1,10 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { Mail, Lock, Eye, EyeOff, Zap, Leaf, BarChart3 } from "lucide-react";
 import textLogo from "../assets/textLogo.png";
 
 export default function Login() {
-  const { t } = useTranslation();
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

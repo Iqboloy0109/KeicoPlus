@@ -1,10 +1,8 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
 
 export default function ContactSection() {
-  const { t } = useTranslation();
 
   return (
     <section className="relative bg-[#1a1f3a] overflow-hidden">
