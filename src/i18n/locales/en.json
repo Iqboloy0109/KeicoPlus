@@ -141,5 +141,170 @@
     "technology": "Technology",
     "news": "News",
     "contact": "Contact Us"
+  },
+  "executiveIntro": {
+    "title": "Executive Introduction",
+    "bannerTitle": "Executive Introduction",
+    "subtitle": "Meet the leadership team driving KEICO PLUS towards innovation and excellence.",
+    "executivesTitle": "KEICO PLUS Executives",
+    "education": "Education",
+    "experience": "Experience",
+    "inquiry": {
+      "title": "Ask Anything",
+      "description": "KEICO PLUS answers concisely and smartly.",
+      "button": "Inquiry"
+    },
+    "executives": {
+      "ceo": {
+        "name": "Jang Il-Hwan",
+        "position": "CEO",
+        "education": "Yonsei University, B.S. in Ceramic Engineering",
+        "experience": "CEO of KEICO PLUS, VP of Korea Energy Industry (affiliate), VP of Teckler, VP of Bizcom Edu, CEO of J&J Publisher"
+      },
+      "cso": {
+        "name": "Yoo Dae-Hyun",
+        "position": "CSO",
+        "education": "Korea University, B.A. in German Literature",
+        "experience": "VP of KEICO PLUS, CEO of Newick E&T, Director at Yonsei University Technology Holdings, Director at Min Byung Chul Education Group Gangnam HQ, Director at Cheongdam English Academy/Wiseman/Jongro M School"
+      },
+      "cfo": {
+        "name": "Choi Jae-Woo",
+        "position": "CFO",
+        "education": "Yonsei University, B.S. in Ceramic Engineering",
+        "experience": "Director of Management at KEICO PLUS, Technology Evaluation Center (Central) at Manufacturing Technology Guarantee Fund / Overseas Business, Management Consultant (Financial Management) at SME Ministry (2001.03 / License No: M007356), IICMC-CMC (International Management Consultant)"
+      },
+      "cto": {
+        "name": "Choi Il-Young",
+        "position": "CTO",
+        "education": "Yonsei University, B.S. in Electrical Engineering",
+        "experience": "Director of Research at KEICO PLUS, Technical Director at Korea Energy Industry (affiliate), Director at ZF Automotive (Slovakia), Head of German subsidiary at Vatech Global, Manager of Automation Business Division at Siemens, Manager of Automotive MKT Team at Siemens"
+      }
+    }
+  },
+  "history": {
+    "title": "History",
+    "subtitle": "As an IoT-based energy management system specialist, this is our journey to create a sustainable future.",
+    "bannerTitle": "History",
+    "inquiry": {
+      "title": "Ask Anything",
+      "description": "KEICO PLUS answers concisely and smartly.",
+      "button": "Inquiry"
+    },
+    "milestones": {
+      "2023-05": {
+        "date": "May 2023",
+        "title": "Selected as a specialized technology supplier for the '2023 Smart Store Technology Supply Project' by the Ministry of SMEs and Startups",
+        "description": "As an official government partner, we provide smart energy solutions for small business owners nationwide."
+      },
+      "2023-green": {
+        "date": "2023",
+        "title": "Acquired 'Green Technology Certification' for smart power saving system",
+        "description": "Officially recognized for technological prowess and eco-friendliness through Ministry of Environment certification."
+      },
+      "2023-mou": {
+        "date": "2023",
+        "title": "Signed MOU with SDX Carbon Reduction Committee for digital transformation and carbon reduction",
+        "description": "Established a strategic partnership for achieving carbon neutrality."
+      },
+      "2020-02": {
+        "date": "February 2020",
+        "title": "Developed data-based energy efficiency interlocking function (EMS)",
+        "description": "Completed next-generation energy management platform using big data analysis technology."
+      },
+      "2019-12": {
+        "date": "December 2019",
+        "title": "Established cloud system and dedicated customer call center",
+        "description": "Strengthened customer service infrastructure to establish a real-time support system."
+      },
+      "2019-10": {
+        "date": "October 2019",
+        "title": "Acquired venture company certification",
+        "description": "Officially registered as a venture company in recognition of innovative technology."
+      },
+      "2019-04": {
+        "date": "April 2019",
+        "title": "Achieved 29.7% energy saving rate in official institution test results",
+        "description": "Demonstrated verified energy saving effects based on financial institution branch offices."
+      },
+      "2018-11": {
+        "date": "November 2018",
+        "title": "Acquired financial institution security review",
+        "description": "Secured security certification for financial sector applications."
+      },
+      "2018-10": {
+        "date": "October 2018",
+        "title": "Development of IoT-based intelligent Energy Management System (EMS)",
+        "description": "First developed smart energy solution incorporating 4th industrial revolution technology."
+      },
+      "2018-07": {
+        "date": "July 2018",
+        "title": "Security and reliability of Energy Management System (EMS) officially certified",
+        "description": "Received official certification for system security and reliability."
+      }
+    }
+  },
+  "values": {
+    "title": "Values",
+    "bannerTitle": "Values",
+    "subtitle": "Our core principles and standards that guide everything we do.",
+    "inquiry": {
+      "title": "Ask Anything",
+      "description": "KEICO PLUS answers concisely and smartly.",
+      "button": "Inquiry"
+    },
+    "mission": {
+      "title": "Mission",
+      "mainText": "We lead towards a brighter future through positive impact.",
+      "description": "We go beyond the conventional energy paradigm to innovate the world's energy, illuminating brightness and hope everywhere. This innovative change lays the foundation for individuals and communities to lead better lives, preserve the environment, and achieve economic prosperity.",
+      "items": [
+        "Customer-centric technological innovation",
+        "Creation of new concept value for customers",
+        "Improvement of customer quality of life and contribution to public interest",
+        "Formation of a smart business system",
+        "Realization of the ideology of Sustainable Development Goals (SDGs)"
+      ]
+    },
+    "vision": {
+      "title": "Vision",
+      "mainText": "Global Leading Group Leap",
+      "description": "New Energy Experience - We transcend conventional energy usage methods, ushering in a new era of energy experience for individuals and society.",
+      "items": [
+        "Company contributing to social value creation and future business",
+        "Company leading change with challenge and passion",
+        "Eco-friendly green energy specialized company",
+        "DX (Digital Transformation) growth partner"
+      ]
+    },
+    "coreValues": {
+      "title": "Core Values",
+      "subtitle": "These are the principles and standards that all members of KEICO PLUS pursue to achieve our mission and vision.",
+      "values": [
+        {
+          "title": "Creativity",
+          "subtitle": "創意",
+          "description": "Think innovatively to change paradigms. We strive for continuous innovation, constantly seeking new ideas and solutions beyond traditional thinking."
+        },
+        {
+          "title": "Innovation",
+          "subtitle": "革新",
+          "description": "Create new value by shedding old practices. Innovation is akin to 'putting on new skin.' We discard outdated customs and methods, embracing creative thinking and technology to don the skin of new possibilities."
+        },
+        {
+          "title": "Responsibility",
+          "subtitle": "責任",
+          "description": "Put heart into every decision and action. Responsibility is our commitment to every action and decision. From the beginning to the completion of every project, we take responsibility for the process and results."
+        },
+        {
+          "title": "Respect",
+          "subtitle": "尊重",
+          "description": "Accept and respect each other's differences. Respect leads our work through accepting each other's differences and showing deep reverence for colleagues, customers, and the world."
+        },
+        {
+          "title": "Sustainability",
+          "subtitle": "지속가능성",
+          "description": "Low-carbon, eco-friendly innovative technology. Expansion of climate technology investment and smart energy cooperation system to contribute to building a carbon-neutral circular society."
+        }
+      ]
+    }
   }
 }
