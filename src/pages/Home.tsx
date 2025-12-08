@@ -3,8 +3,8 @@ import {
   AboutSection,
   HowItWorks,
   SolutionsPanel,
-  ContactSection,
 } from '../components/home';
+import { InquirySection } from '../components/common';
 
 export default function Home() {
   return (
@@ -13,7 +13,12 @@ export default function Home() {
       <AboutSection />
       <SolutionsPanel />
       <HowItWorks />
-      <ContactSection />
+      <InquirySection
+        titleKey="home.inquiry.title"
+        descriptionKey="home.inquiry.description"
+        buttonKey="home.inquiry.button"
+        buttonLink="/contact"
+      />
     </>
   );
 }

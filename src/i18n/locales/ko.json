@@ -243,6 +243,20 @@
       }
     }
   },
+  "keicoPlus": {
+    "inquiry": {
+      "title": "무엇이든 물어보세요",
+      "description": "KEICO PLUS가 간결하고 똑똑하게 답해드립니다.",
+      "button": "문의하기"
+    }
+  },
+  "home": {
+    "inquiry": {
+      "title": "무엇이든 물어보세요",
+      "description": "KEICO PLUS가 간결하고 똑똑하게 답해드립니다.",
+      "button": "문의하기"
+    }
+  },
   "values": {
     "title": "핵심 가치",
     "bannerTitle": "핵심 가치",

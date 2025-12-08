@@ -243,6 +243,20 @@
       }
     }
   },
+  "keicoPlus": {
+    "inquiry": {
+      "title": "Ask Anything",
+      "description": "KEICO PLUS answers concisely and smartly.",
+      "button": "Inquiry"
+    }
+  },
+  "home": {
+    "inquiry": {
+      "title": "Ask Anything",
+      "description": "KEICO PLUS answers concisely and smartly.",
+      "button": "Inquiry"
+    }
+  },
   "values": {
     "title": "Values",
     "bannerTitle": "Values",

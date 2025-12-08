@@ -92,51 +92,54 @@ function VisionSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-accent-green/5 via-white to-primary/5"
+      className="relative min-h-screen flex items-center overflow-hidden bg-white"
     >
-      {/* Animated Background Pattern */}
+      {/* Animated Background Elements */}
       <div className="absolute inset-0 z-0 overflow-hidden">
+        {/* Floating gradient orbs */}
         <motion.div
           animate={{
-            scale: [1, 1.1, 1],
-            rotate: [0, 5, 0],
+            scale: [1, 1.2, 1],
+            x: [0, 100, 0],
+            y: [0, 50, 0],
           }}
           transition={{
             duration: 20,
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute -top-40 -right-40 w-96 h-96 bg-accent-green/10 rounded-full blur-3xl"
+          className="absolute top-20 right-20 w-72 h-72 bg-gradient-to-br from-primary/10 to-accent-green/10 rounded-full blur-3xl"
         />
         <motion.div
           animate={{
-            scale: [1, 1.2, 1],
-            rotate: [0, -5, 0],
+            scale: [1, 1.3, 1],
+            x: [0, -80, 0],
+            y: [0, -60, 0],
           }}
           transition={{
-            duration: 15,
+            duration: 25,
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute -bottom-40 -left-40 w-96 h-96 bg-primary/10 rounded-full blur-3xl"
+          className="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-br from-accent-green/10 to-primary/10 rounded-full blur-3xl"
         />
+
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 opacity-[0.03]">
+          <div
+            className="w-full h-full"
+            style={{
+              backgroundImage: `
+                linear-gradient(#1E90FF 1px, transparent 1px),
+                linear-gradient(90deg, #1E90FF 1px, transparent 1px)
+              `,
+              backgroundSize: "60px 60px",
+            }}
+          />
+        </div>
       </div>
 
-      {/* Subtle Grid Pattern */}
-      <div className="absolute inset-0 z-[1] opacity-5">
-        <div
-          className="w-full h-full"
-          style={{
-            backgroundImage: `
-              linear-gradient(rgba(0, 191, 166, 0.1) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(0, 191, 166, 0.1) 1px, transparent 1px)
-            `,
-            backgroundSize: "50px 50px",
-          }}
-        />
-      </div>
-
-      <div className="container-custom relative z-10 py-20">
+      <div className="container-custom relative z-10 py-20 md:py-28">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
@@ -145,36 +148,39 @@ function VisionSection() {
           className="max-w-7xl mx-auto"
         >
           {/* Header */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 md:mb-20">
             <motion.div
-              initial={{ scale: 0 }}
-              animate={inView ? { scale: 1 } : {}}
+              initial={{ scale: 0, rotate: -180 }}
+              animate={inView ? { scale: 1, rotate: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2, type: "spring" }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-accent-green/20 rounded-full mb-6"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-primary/10 to-accent-green/10 rounded-full mb-6 border border-primary/20"
             >
-              <Sparkles className="w-5 h-5 text-accent-green" />
-              <span className="text-sm font-semibold text-accent-green uppercase tracking-wide">
+              <Sparkles className="text-primary" size={18} />
+              <span className="text-sm font-semibold text-primary uppercase tracking-wider">
                 {t("values.vision.title")}
               </span>
             </motion.div>
+
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-dark mb-6"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6"
             >
               {t("values.vision.title")}
             </motion.h2>
+
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="inline-block px-8 py-5 bg-gradient-to-r from-accent-green/20 via-primary/20 to-accent-green/20 rounded-3xl mb-8 backdrop-blur-md border-2 border-accent-green/30 shadow-2xl"
+              className="inline-block px-8 py-6 bg-gradient-to-r from-primary/5 via-accent-green/5 to-primary/5 rounded-2xl mb-8 border border-primary/10 shadow-lg backdrop-blur-sm"
             >
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-dark">
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary via-accent-green to-primary bg-clip-text text-transparent">
                 {t("values.vision.mainText")}
               </p>
             </motion.div>
+
             <motion.p
               initial={{ opacity: 0 }}
               animate={inView ? { opacity: 1 } : {}}
@@ -185,18 +191,25 @@ function VisionSection() {
             </motion.p>
           </div>
 
-          {/* Vision Items - Modern Card Layout */}
+          {/* Vision Items - Modern Card Layout with Icons */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             {visionItems.map((item, index) => {
-              const visionIcons = [Eye, Globe, Rocket, Zap];
-              const Icon = visionIcons[index] || Target;
+              const visionIcons = [
+                <Eye key="eye" size={40} className="text-white" />,
+                <Globe key="globe" size={40} className="text-white" />,
+                <Rocket key="rocket" size={40} className="text-white" />,
+                <Zap key="zap" size={40} className="text-white" />,
+              ];
+              const iconElement = visionIcons[index] || (
+                <Target key="target" size={40} className="text-white" />
+              );
               return (
                 <VisionCard
                   key={index}
                   index={index}
                   item={item}
                   inView={inView}
-                  Icon={Icon}
+                  iconElement={iconElement}
                 />
               );
             })}
@@ -211,10 +224,10 @@ interface VisionCardProps {
   index: number;
   item: string;
   inView: boolean;
-  Icon: React.ComponentType<{ className?: string }>;
+  iconElement: React.ReactNode;
 }
 
-function VisionCard({ index, item, inView, Icon }: VisionCardProps) {
+function VisionCard({ index, item, inView, iconElement }: VisionCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: cardRef,
@@ -222,86 +235,119 @@ function VisionCard({ index, item, inView, Icon }: VisionCardProps) {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], [30, -30]);
-  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0]);
 
   return (
     <motion.div
       ref={cardRef}
-      initial={{ opacity: 0, y: 50, scale: 0.95 }}
+      initial={{ opacity: 0, y: 100, scale: 0.95 }}
       animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
-      transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
-      style={{ y, opacity }}
+      transition={{
+        duration: 0.8,
+        delay: 0.4 + index * 0.1,
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
+      }}
+      style={{ y }}
       className="relative group"
+      whileHover={{ y: -8, scale: 1.02 }}
     >
-      <div className="bg-white/90 backdrop-blur-md rounded-3xl p-8 sm:p-10 shadow-2xl border-2 border-gray-100 hover:border-accent-green/50 hover:shadow-3xl transition-all duration-500 relative overflow-hidden h-full">
-        {/* Animated gradient overlay */}
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-br from-accent-green/10 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"
-          animate={{
-            backgroundPosition: ["0% 0%", "100% 100%"],
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            repeatType: "reverse",
-          }}
-        />
+      <motion.div className="bg-white rounded-2xl p-8 sm:p-10 shadow-xl border border-gray-200 hover:border-primary/30 hover:shadow-2xl transition-all duration-300 relative overflow-hidden h-full">
+        {/* Animated gradient background on hover */}
+        <motion.div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent-green/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
 
-        {/* Glowing border on hover */}
-        <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-          <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-accent-green/20 via-primary/20 to-accent-green/20 blur-xl" />
+        {/* Glowing border effect on hover */}
+        <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+          <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary/15 via-accent-green/15 to-primary/15 blur-sm" />
         </div>
 
         <div className="relative z-10">
-          {/* Icon */}
+          {/* Icon with animated background */}
           <motion.div
             initial={{ scale: 0, rotate: -180 }}
             animate={inView ? { scale: 1, rotate: 0 } : {}}
             transition={{
-              duration: 0.6,
-              delay: 0.8 + index * 0.1,
+              duration: 0.8,
+              delay: 0.8 + index * 0.15,
               type: "spring",
+              stiffness: 200,
             }}
-            className="w-16 h-16 bg-gradient-to-br from-accent-green to-accent-green/70 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300"
+            className="relative mb-6"
           >
-            <Icon className="w-8 h-8 text-white" />
+            <motion.div
+              whileHover={{ scale: 1.08 }}
+              className="w-20 h-20 bg-gradient-to-br from-primary via-primary/90 to-accent-green rounded-2xl flex items-center justify-center shadow-lg relative overflow-hidden group/icon transition-transform duration-300"
+            >
+              {/* Animated glow effect */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"
+                animate={{
+                  opacity: [0.3, 0.6, 0.3],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+              <div className="relative z-10">{iconElement}</div>
+
+              {/* Floating particles around icon */}
+              {[...Array(4)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute w-1.5 h-1.5 bg-white/40 rounded-full"
+                  style={{
+                    top: `${15 + i * 20}%`,
+                    left: `${15 + (i % 2) * 70}%`,
+                  }}
+                  animate={{
+                    y: [0, -10, 0],
+                    opacity: [0.4, 0.8, 0.4],
+                    scale: [1, 1.3, 1],
+                  }}
+                  transition={{
+                    duration: 2 + i * 0.3,
+                    repeat: Infinity,
+                    delay: i * 0.2,
+                  }}
+                />
+              ))}
+            </motion.div>
           </motion.div>
 
           {/* Number Badge */}
-          <div className="absolute top-6 right-6 w-12 h-12 bg-gradient-to-br from-primary/20 to-accent-green/20 rounded-full flex items-center justify-center text-lg font-bold text-primary group-hover:scale-110 transition-transform duration-300">
+          <motion.div
+            initial={{ opacity: 0, scale: 0 }}
+            animate={inView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
+            className="absolute top-6 right-6 w-14 h-14 bg-gradient-to-br from-primary/10 to-accent-green/10 rounded-xl flex items-center justify-center text-lg font-bold text-primary border border-primary/20 group-hover:scale-105 group-hover:border-primary/40 transition-all duration-300"
+          >
             {String(index + 1).padStart(2, "0")}
-          </div>
+          </motion.div>
 
           {/* Content */}
-          <p className="text-lg sm:text-xl text-gray-700 leading-relaxed font-medium group-hover:text-dark transition-colors duration-300">
+          <motion.p
+            initial={{ opacity: 0, x: -20 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
+            className="text-lg sm:text-xl text-gray-800 leading-relaxed font-medium group-hover:text-gray-900 transition-colors duration-300 pr-16"
+          >
             {item}
-          </p>
+          </motion.p>
 
-          {/* Decorative line */}
-          <div className="mt-6 w-16 h-1 bg-gradient-to-r from-accent-green to-primary rounded-full group-hover:w-24 transition-all duration-300" />
+          {/* Animated decorative line */}
+          <motion.div
+            initial={{ width: 0 }}
+            animate={inView ? { width: "64px" } : {}}
+            transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
+            className="mt-6 h-1 bg-gradient-to-r from-primary via-accent-green to-primary rounded-full group-hover:w-24 transition-all duration-300"
+          />
         </div>
 
-        {/* Floating particles */}
-        {[...Array(3)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-accent-green/30 rounded-full"
-            style={{
-              top: `${20 + i * 30}%`,
-              left: `${10 + i * 20}%`,
-            }}
-            animate={{
-              y: [0, -15, 0],
-              opacity: [0.3, 1, 0.3],
-            }}
-            transition={{
-              duration: 2 + i,
-              repeat: Infinity,
-              delay: i * 0.5,
-            }}
-          />
-        ))}
-      </div>
+        {/* Corner accent decoration */}
+        <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary/5 to-transparent rounded-bl-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      </motion.div>
     </motion.div>
   );
 }
@@ -581,7 +627,11 @@ function CoreValuesSection() {
             className="text-center mb-16"
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/20 rounded-full mb-6">
-              <Sparkles className="w-5 h-5 text-primary" />
+              <Sparkles
+                className="text-primary w-5 h-5"
+                width={20}
+                height={20}
+              />
               <span className="text-sm font-semibold text-primary uppercase tracking-wide">
                 {t("values.coreValues.title")}
               </span>
@@ -599,7 +649,7 @@ function CoreValuesSection() {
       {/* Individual Value Sections */}
       <div className="relative">
         {coreValues.map((value, index) => {
-          const Icon = icons[index] || Lightbulb;
+          const IconComponent = icons[index] || Lightbulb;
           const bg = valueBackgrounds[index] || valueBackgrounds[0];
           const isEven = index % 2 === 0;
 
@@ -608,7 +658,7 @@ function CoreValuesSection() {
               key={index}
               index={index}
               value={value}
-              Icon={Icon}
+              IconComponent={IconComponent}
               background={bg}
               isEven={isEven}
             />
@@ -626,7 +676,7 @@ interface ValueItemSectionProps {
     subtitle: string;
     description: string;
   };
-  Icon: React.ComponentType<{ className?: string }>;
+  IconComponent: React.ComponentType<{ className?: string; size?: number }>;
   background: { video: string | null; image: string };
   isEven: boolean;
 }
@@ -634,7 +684,7 @@ interface ValueItemSectionProps {
 function ValueItemSection({
   index,
   value,
-  Icon,
+  IconComponent,
   background,
   isEven,
 }: ValueItemSectionProps) {
@@ -741,7 +791,10 @@ function ValueItemSection({
                   }}
                   className="absolute inset-0 bg-primary/30 rounded-3xl blur-xl"
                 />
-                <Icon className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 text-white relative z-10 group-hover:scale-110 transition-transform duration-300" />
+                <IconComponent
+                  className="text-white relative z-10 group-hover:scale-110 transition-transform duration-300"
+                  size={64}
+                />
               </div>
               {/* Floating particles */}
               {[...Array(3)].map((_, i) => (

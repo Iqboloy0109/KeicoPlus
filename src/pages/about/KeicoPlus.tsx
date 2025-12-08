@@ -1,7 +1,7 @@
-import { useRef } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ChevronRight, ChevronDown } from "lucide-react";
+import { InquirySection } from "../../components/common";
 
 export default function KeicoPlus() {
   const businessAreas = [
@@ -387,53 +387,13 @@ export default function KeicoPlus() {
         ))}
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 md:py-28 bg-white relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div
-            className="w-full h-full"
-            style={{
-              backgroundImage: `
-                linear-gradient(#1E90FF 1px, transparent 1px),
-                linear-gradient(90deg, #1E90FF 1px, transparent 1px)
-              `,
-              backgroundSize: "60px 60px",
-            }}
-          />
-        </div>
-
-        <div className="container-custom relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              함께 만들어가는 지속 가능한 미래
-            </h2>
-            <p className="text-gray-600 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
-              KEICO PLUS와 함께 에너지 효율화와 탄소중립 목표를 달성하세요
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center gap-2 px-10 py-4 bg-[#1E90FF] text-white font-semibold rounded-full hover:bg-[#1873CC] transition-colors shadow-lg shadow-[#1E90FF]/30"
-              >
-                문의하기
-                <ChevronRight size={20} />
-              </Link>
-              <Link
-                to="/services"
-                className="inline-flex items-center justify-center gap-2 px-10 py-4 border-2 border-gray-300 text-gray-700 font-semibold rounded-full hover:border-[#1E90FF] hover:text-[#1E90FF] transition-all"
-              >
-                서비스 보기
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      {/* Inquiry Section */}
+      <InquirySection
+        titleKey="keicoPlus.inquiry.title"
+        descriptionKey="keicoPlus.inquiry.description"
+        buttonKey="keicoPlus.inquiry.button"
+        buttonLink="/contact"
+      />
     </div>
   );
 }
