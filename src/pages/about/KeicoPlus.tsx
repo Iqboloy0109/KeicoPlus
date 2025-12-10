@@ -99,7 +99,7 @@ export default function KeicoPlus() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight mb-6"
           >
-            About Keico Plus
+            About KEICO PLUS
           </motion.h1>
 
           {/* Subtitle */}
