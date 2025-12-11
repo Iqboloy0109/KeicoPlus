@@ -85,7 +85,7 @@ export default function EMS() {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: 30 }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed right-8 top-1/2 -translate-y-1/2 z-50 hidden lg:block"
+          className="fixed right-0 top-1/2 -translate-y-1/2 z-50 hidden lg:block"
         >
           <div className="relative">
             {/* Decorative gradient background */}
@@ -149,15 +149,6 @@ export default function EMS() {
                         {item.label}
                       </span>
                     </div>
-
-                    {/* Active indicator dot */}
-                    {activeSection === item.id && (
-                      <motion.div
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        className="absolute right-3 top-1/2 -translate-y-1/2 w-1.5 h-1.5 bg-white rounded-full"
-                      />
-                    )}
                   </button>
                 ))}
               </div>
