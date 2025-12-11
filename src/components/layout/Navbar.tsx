@@ -26,8 +26,17 @@ export default function Navbar() {
         { label: t("nav.history"), href: "/about/history" },
       ],
     },
-    { label: t("nav.serviceSolution"), href: "/services" },
+    {
+      label: t("nav.service"),
+      dropdown: [
+        { label: t("nav.energyEfficiency"), href: "/services/ems" },
+        { label: t("nav.zeroEnergyBuilding"), href: "/services/zeb" },
+        { label: t("nav.re100"), href: "/services/re100" },
+        { label: t("nav.greenEnergy"), href: "/services/green-energy" },
+      ],
+    },
     { label: t("nav.technology"), href: "/technology" },
+    { label: t("nav.platform"), href: "/platform" },
     { label: t("nav.news"), href: "/news" },
     { label: t("nav.contact"), href: "/contact" },
   ];
@@ -50,6 +59,7 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsMobileMenuOpen(false);
     setOpenDropdown(null);
     setMobileDropdownOpen(null);

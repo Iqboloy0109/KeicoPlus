@@ -1,8 +1,7 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Layout } from './components/layout';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Layout } from "./components/layout";
 import {
   Home,
-  Services,
   Technology,
   News,
   Contact,
@@ -10,8 +9,12 @@ import {
   KeicoPlus,
   Values,
   ExecutiveIntro,
-  History
-} from './pages';
+  History,
+  EMS,
+  ZEB,
+  RE100,
+  GreenEnergy,
+} from "./pages";
 
 function App() {
   return (
@@ -26,8 +29,11 @@ function App() {
           <Route path="about/executive-intro" element={<ExecutiveIntro />} />
           <Route path="about/history" element={<History />} />
 
-          {/* Other routes */}
-          <Route path="services" element={<Services />} />
+          {/* Services routes */}
+          <Route path="services/ems" element={<EMS />} />
+          <Route path="services/zeb" element={<ZEB />} />
+          <Route path="services/re100" element={<RE100 />} />
+          <Route path="services/green-energy" element={<GreenEnergy />} />
           <Route path="technology" element={<Technology />} />
           <Route path="news" element={<News />} />
           <Route path="contact" element={<Contact />} />

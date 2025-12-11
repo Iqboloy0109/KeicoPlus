@@ -407,25 +407,40 @@ function MissionSection() {
           {/* Header */}
           <div className="text-center mb-20">
             <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              key={`title-${inView}`}
+              initial={{ opacity: 0, y: 50 }}
+              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+              transition={{
+                duration: 1.2,
+                delay: 0.2,
+                ease: [0.16, 1, 0.3, 1],
+              }}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6"
             >
               {t("values.mission.title")}
             </motion.h2>
             <motion.p
-              initial={{ opacity: 0 }}
-              animate={inView ? { opacity: 1 } : {}}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              key={`mainText-${inView}`}
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{
+                duration: 1.2,
+                delay: 0.5,
+                ease: [0.16, 1, 0.3, 1],
+              }}
               className="text-xl sm:text-2xl text-gray-300 max-w-3xl mx-auto mb-12"
             >
               {t("values.mission.mainText")}
             </motion.p>
             <motion.p
-              initial={{ opacity: 0 }}
-              animate={inView ? { opacity: 1 } : {}}
-              transition={{ duration: 0.8, delay: 0.5 }}
+              key={`description-${inView}`}
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{
+                duration: 1.2,
+                delay: 0.8,
+                ease: [0.16, 1, 0.3, 1],
+              }}
               className="text-lg text-gray-400 leading-relaxed max-w-4xl mx-auto"
             >
               {t("values.mission.description")}
@@ -564,9 +579,14 @@ function MissionItemWithLine({
     <div ref={itemRef} className="relative flex flex-col items-center">
       {/* Content Card */}
       <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8, delay: 0.6 + index * 0.2 }}
+        key={`mission-item-${index}-${inView}`}
+        initial={{ opacity: 0, y: 60 }}
+        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
+        transition={{
+          duration: 1.2,
+          delay: 1.0 + index * 0.15,
+          ease: [0.16, 1, 0.3, 1],
+        }}
         className="relative z-10 w-full mb-8 h-full flex flex-col"
       >
         <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-5 sm:p-6 border border-primary/20 hover:border-primary/50 hover:bg-white/10 transition-all duration-500 group flex-1 flex items-center">
