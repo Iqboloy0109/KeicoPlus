@@ -5,8 +5,13 @@
     "values": "Values",
     "executiveIntro": "Executive Intro",
     "history": "History",
-    "serviceSolution": "Service & Solution",
+    "service": "Service",
+    "energyEfficiency": "Energy Efficiency Business (EMS)",
+    "zeroEnergyBuilding": "Zero Energy Building (ZEB)",
+    "re100": "RE 100",
+    "greenEnergy": "Green Energy Business",
     "technology": "Technology",
+    "platform": "Platform",
     "news": "News",
     "contact": "Contact",
     "login": "Login"
@@ -137,7 +142,7 @@
     "values": "Values",
     "executiveIntro": "Executive Intro",
     "history": "History",
-    "services": "Service & Solution",
+    "services": "Service",
     "technology": "Technology",
     "news": "News",
     "contact": "Contact Us"
@@ -244,6 +249,73 @@
     }
   },
   "keicoPlus": {
+    "inquiry": {
+      "title": "Ask Anything",
+      "description": "KEICO PLUS answers concisely and smartly.",
+      "button": "Inquiry"
+    }
+  },
+  "ems": {
+    "breadcrumb": {
+      "home": "Home",
+      "service": "Service"
+    },
+    "navigation": {
+      "mainContent": "Main Content",
+      "feco": "Energy Management System"
+    },
+    "title": "Energy Efficiency Business (EMS)",
+    "subtitle": "Optimize building consumption through automated operational optimization",
+    "scrollDown": "Scroll Down",
+    "content": {
+      "title": "Intelligent Energy Efficiency, 'Optimization' of Building Consumption",
+      "paragraph1": "Through real-time data-based control and automated operational optimization",
+      "paragraph2": "Reduce power consumption of heating, cooling, lighting, and facilities, and realize cost savings.",
+      "whyEMS": {
+        "title": "Why EMS?",
+        "description": "Energy innovation value that completes everything from cost savings and operational efficiency to carbon reduction and reliability assurance.",
+        "cards": {
+          "card1": {
+            "title": "Electricity Bill Savings",
+            "description": "Effectively reduce electricity bills through energy consumption optimization."
+          },
+          "card2": {
+            "title": "Secure Reliability Through Public Data Linkage",
+            "description": "Build a reliable energy management system by linking with public data."
+          },
+          "card3": {
+            "title": "Carbon Emission Reduction",
+            "description": "Contribute to environmental protection by reducing carbon emissions through energy efficiency."
+          },
+          "card4": {
+            "title": "Operational Automation",
+            "description": "Maximize operational efficiency with automated systems."
+          }
+        }
+      },
+      "feco": {
+        "title": "Energy Management System (FECO)",
+        "description": "KEICO+ contributes to carbon neutrality and national NDC achievement through energy efficiency services.",
+        "cards": {
+          "card1": {
+            "title": "Energy Efficiency",
+            "description": "Automatically adjust heating/cooling, lighting, and facilities to save power"
+          },
+          "card2": {
+            "title": "Demand Management",
+            "description": "Reduce electricity during peak hours to optimize tariff plans"
+          },
+          "card3": {
+            "title": "Monitoring and Data Reporting",
+            "description": "Dashboard & report showing energy usage and savings at a glance"
+          },
+          "card4": {
+            "title": "Consulting and Specialization",
+            "description": "Advanced optimization through pre-implementation diagnosis and post-implementation maintenance"
+          }
+        }
+      }
+    },
     "inquiry": {
       "title": "Ask Anything",
       "description": "KEICO PLUS answers concisely and smartly.",
