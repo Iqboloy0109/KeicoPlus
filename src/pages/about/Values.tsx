@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useInView } from "react-intersection-observer";
 import { useRef, useState, useEffect } from "react";
 import { InquirySection } from "../../components/common";
+import { smoothScrollTo } from "../../utils/smoothScroll";
 import {
   Lightbulb,
   Target,
@@ -78,20 +79,16 @@ export default function Values() {
   }, [visionInView, missionInView, coreValuesInView]);
 
   const scrollToSection = (sectionId: string) => {
+    // Get element immediately
     const element = document.getElementById(sectionId);
-    if (element) {
-      const navbar =
-        document.querySelector("nav") || document.querySelector("header");
-      const navbarHeight = navbar ? navbar.getBoundingClientRect().height : 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition =
-        elementPosition + window.pageYOffset - navbarHeight;
-
-      window.scrollTo({
-        top: Math.max(0, offsetPosition),
-        behavior: "smooth",
-      });
-    }
+    if (!element) return;
+    
+    // Calculate offset immediately
+    const navbar = document.querySelector("nav") || document.querySelector("header");
+    const navbarHeight = navbar ? navbar.getBoundingClientRect().height : 80;
+    
+    // Call scroll function immediately - no delays
+    smoothScrollTo(element, navbarHeight, 2000);
   };
 
   const navigationItems = [
@@ -105,32 +102,36 @@ export default function Values() {
       {/* Right Side Navigation */}
       {showNavigation && (
         <motion.nav
-          initial={{ opacity: 0, x: 30 }}
+          initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: 30 }}
-          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          exit={{ opacity: 0, x: 20 }}
+          transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
           className="fixed right-0 top-1/2 -translate-y-1/2 z-50 hidden lg:block"
         >
           <div className="relative">
-            {/* Decorative gradient background */}
-            <div className="absolute -inset-1 bg-gradient-to-br from-primary/20 via-primary/10 to-transparent rounded-2xl blur-sm opacity-50" />
-
-            {/* Main container */}
-            <div className="relative bg-white/80 backdrop-blur-xl rounded-2xl shadow-2xl p-4 border border-gray-200/30">
-              {/* Top accent line */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-12 h-0.5 bg-gradient-to-r from-transparent via-primary/60 to-transparent rounded-full" />
-
-              <div className="flex flex-col gap-2">
+            {/* Main container - transparent and subtle */}
+            <div className="relative bg-white/30 backdrop-blur-md rounded-l-xl shadow-lg p-2 border-l border-t border-b border-gray-200/15">
+              <div className="flex flex-col gap-1">
                 {navigationItems.map((item, index) => (
                   <button
                     key={item.id}
-                    onClick={() => scrollToSection(item.id)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      // Call immediately - no delays
+                      scrollToSection(item.id);
+                    }}
+                    onMouseDown={(e) => {
+                      // Start scroll on mousedown for even faster response
+                      e.preventDefault();
+                      scrollToSection(item.id);
+                    }}
                     className={`
-                      relative px-5 py-2.5 rounded-xl text-left transition-all duration-300 group overflow-hidden
+                      relative px-3 py-1.5 rounded-lg text-left transition-colors duration-100 group overflow-hidden
                       ${
                         activeSection === item.id
                           ? "text-white"
-                          : "text-gray-700 hover:text-primary"
+                          : "text-gray-600 hover:text-gray-900"
                       }
                     `}
                   >
@@ -138,30 +139,30 @@ export default function Values() {
                     {activeSection === item.id && (
                       <motion.div
                         layoutId="activeSection"
-                        className="absolute inset-0 bg-gradient-to-r from-primary via-primary-dark to-primary rounded-xl shadow-lg shadow-primary/30"
+                        className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/70 to-primary/80 rounded-lg"
                         transition={{
                           type: "spring",
-                          bounce: 0.25,
-                          duration: 0.7,
+                          bounce: 0.2,
+                          duration: 0.5,
                         }}
                       />
                     )}
 
                     {/* Hover background */}
                     {activeSection !== item.id && (
-                      <div className="absolute inset-0 bg-gradient-to-r from-gray-50/0 via-gray-50/50 to-gray-50/0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <div className="absolute inset-0 bg-gray-100/50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                     )}
 
                     {/* Content */}
-                    <div className="relative z-10 flex items-center gap-3">
+                    <div className="relative z-10 flex items-center gap-2">
                       {/* Number badge */}
                       <span
                         className={`
-                          w-6 h-6 rounded-lg flex items-center justify-center text-xs font-bold transition-all duration-300 flex-shrink-0
+                          w-4 h-4 rounded flex items-center justify-center text-[10px] font-semibold transition-all duration-200 flex-shrink-0
                           ${
                             activeSection === item.id
-                              ? "bg-white/20 text-white backdrop-blur-sm"
-                              : "bg-gray-100 text-gray-500 group-hover:bg-primary/10 group-hover:text-primary"
+                              ? "bg-white/30 text-white"
+                              : "bg-gray-200/60 text-gray-500 group-hover:bg-primary/10 group-hover:text-primary"
                           }
                         `}
                       >
@@ -169,16 +170,13 @@ export default function Values() {
                       </span>
 
                       {/* Label */}
-                      <span className="font-medium text-xs leading-snug whitespace-nowrap">
+                      <span className="font-normal text-[10px] leading-tight whitespace-nowrap">
                         {item.label}
                       </span>
                     </div>
                   </button>
                 ))}
               </div>
-
-              {/* Bottom accent line */}
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-0.5 bg-gradient-to-r from-transparent via-primary/60 to-transparent rounded-full" />
             </div>
           </div>
         </motion.nav>

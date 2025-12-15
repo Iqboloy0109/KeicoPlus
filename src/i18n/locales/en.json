@@ -322,6 +322,105 @@
       "button": "Inquiry"
     }
   },
+  "zeb": {
+    "breadcrumb": {
+      "home": "Home",
+      "service": "Service"
+    },
+    "navigation": {
+      "description": "ZEB Overview",
+      "elements": "ZEB Elements & FECO",
+      "sustainable": "Sustainable Future"
+    },
+    "title": "Zero Energy Building (ZEB)",
+    "subtitle": "Buildings where the sum of energy consumed and energy produced equals zero",
+    "scrollDown": "Scroll Down",
+    "description": {
+      "eyebrow": "AI-based energy operation optimization",
+      "title": "ZEB 3 Elements and FECO's Core Role",
+      "paragraph": "Zero Energy Building is completed by the harmony of three core elements. FECO is responsible for the operation of high-efficiency facilities among them, and supports securing energy independence through AI technology.",
+      "cards": {
+        "card1": {
+          "title": "Building Basic Elements",
+          "description": "Securing performance to minimize energy loss based on basic architectural elements"
+        },
+        "card2": {
+          "title": "AI-Optimized Facility Operation",
+          "description": "Minimizing energy consumption through AI-optimized operation and automatic control of heating, cooling, ventilation, and lighting facilities"
+        },
+        "card3": {
+          "title": "Renewable Energy Monitoring",
+          "description": "Support for calculating self-sufficiency rate through monitoring and prediction of renewable energy generation such as solar and geothermal, and data linkage"
+        }
+      }
+    },
+    "steps": {
+      "title": "AI-based Energy Consumption Minimization",
+      "subtitle": "Precisely control facility operations with sensor data to reduce waste and achieve the efficiency grades required for ZEB certification.",
+      "items": {
+        "item1": {
+          "title": "Real-time Sensor Data Collection and Analysis",
+          "description": "Collect and analyze data in real time through sensors connected to each facility."
+        },
+        "item2": {
+          "title": "Learning Optimal Operating Patterns by Facility",
+          "description": "AI learns the optimal operating pattern for each facility based on the collected data."
+        },
+        "item3": {
+          "title": "Automated Energy-Saving Control",
+          "description": "Execute automated control based on learned patterns to minimize energy consumption."
+        }
+      }
+    },
+    "bems": {
+      "eyebrow": "AI-driven solution to simplify ZEB certification and energy management innovation",
+      "title": "Integrated BEMS-level control data",
+      "subtitle": "Provides integrated control, real-time data logging, and reporting essential for ZEB certification via FECO. Automates complex data aggregation and analysis to accelerate certification.",
+      "items": {
+        "item1": "Unified ENMS functions essential for ZEB certification",
+        "item2": "Real-time data control, logging, and reporting support",
+        "item3": "Automated, analysis-based optimization of certification steps"
+      }
+    },
+    "quotes": {
+      "eyebrow": "Energy self-sufficiency analysis & optimization system",
+      "title": "Precise Energy Self-Sufficiency",
+      "subtitle": "Compare generation and consumption in real time, calculate self-sufficiency, and present strategies to close the gap.",
+      "items": {
+        "item1": "Real-time matching of generation and consumption",
+        "item2": "Precision self-sufficiency calculation algorithm",
+        "item3": "Optimized actions to achieve targets"
+      }
+    },
+    "sustainable": {
+      "title": "The Path to a Sustainable Future",
+      "subtitle": "Pathway to building a sustainable future",
+      "description": "By optimizing energy consumption and maximizing the value of buildings while contributing to environmental protection, we exert positive influence and work towards realizing a sustainable future.",
+      "sections": {
+        "section1": {
+          "title": "Real-time Energy Monitoring",
+          "description": "We utilize AI to monitor energy usage in real-time, enabling us to accurately understand energy consumption patterns and recommend optimal usage patterns for achieving energy efficiency."
+        },
+        "section2": {
+          "title": "Big Data Analysis-based Energy Optimization",
+          "description": "Our system operates based on big data analysis to optimize energy usage. Through trends and predictive analysis of energy usage, we propose and implement energy-saving measures."
+        },
+        "section3": {
+          "title": "Renewable Energy Production",
+          "description": "NX builds and manages communities for renewable energy production, connecting individual producers and consumers to foster a sustainable energy ecosystem through smart grids."
+        },
+        "section4": {
+          "title": "Power Supply and Trading Utilizing Energy Storage Systems (ESS)",
+          "description": "Through energy storage systems (ESS), NX plays an efficient role in power supply and participates in the power trading market. This helps balance energy supply and demand and builds a more efficient energy ecosystem."
+        }
+      }
+    },
+    "inquiry": {
+      "title": "Ask Anything",
+      "description": "KEICO PLUS answers concisely and smartly.",
+      "button": "Inquiry"
+    }
+  },
   "home": {
     "inquiry": {
       "title": "Ask Anything",

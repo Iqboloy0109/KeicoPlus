@@ -3,66 +3,38 @@ import { Link } from "react-router-dom";
 import { ChevronRight, ChevronDown } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useInView } from "react-intersection-observer";
-import { useState, useEffect } from "react";
 import { InquirySection } from "../../components/common";
 
 export default function EMS() {
   const { t } = useTranslation();
-  const [activeSection, setActiveSection] = useState("section1");
-  const [showNavigation, setShowNavigation] = useState(false);
 
   const { ref: fecoRef, inView: fecoInView } = useInView({
     threshold: 0.1,
     triggerOnce: false,
   });
 
-  const { ref: mainContentRef, inView: mainContentInView } = useInView({
+  // Individual refs for each card to animate them one by one
+  const { ref: card1Ref } = useInView({
+    threshold: 0.2,
+    triggerOnce: false,
+  });
+  const { ref: card2Ref } = useInView({
+    threshold: 0.2,
+    triggerOnce: false,
+  });
+  const { ref: card3Ref } = useInView({
+    threshold: 0.2,
+    triggerOnce: false,
+  });
+  const { ref: card4Ref } = useInView({
     threshold: 0.2,
     triggerOnce: false,
   });
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const heroHeight = window.innerHeight;
-      const scrollPosition = window.scrollY;
-      setShowNavigation(scrollPosition > heroHeight * 0.8);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Initial check
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const updateActiveSection = () => {
-      if (mainContentInView) {
-        setActiveSection("section1");
-      } else if (fecoInView) {
-        setActiveSection("section2");
-      }
-    };
-
-    // Use requestAnimationFrame to avoid cascading renders
-    requestAnimationFrame(updateActiveSection);
-  }, [mainContentInView, fecoInView]);
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const navbar =
-        document.querySelector("nav") || document.querySelector("header");
-      const navbarHeight = navbar ? navbar.getBoundingClientRect().height : 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition =
-        elementPosition + window.pageYOffset - navbarHeight;
-
-      window.scrollTo({
-        top: Math.max(0, offsetPosition),
-        behavior: "smooth",
-      });
-    }
-  };
+  const { ref: mainContentRef } = useInView({
+    threshold: 0.2,
+    triggerOnce: false,
+  });
 
   const scrollToContent = () => {
     window.scrollTo({
@@ -71,95 +43,8 @@ export default function EMS() {
     });
   };
 
-  const navigationItems = [
-    { id: "section1", label: t("ems.navigation.mainContent") },
-    { id: "section2", label: t("ems.navigation.feco") },
-  ];
-
   return (
     <div className="min-h-screen bg-white relative">
-      {/* Right Side Navigation */}
-      {showNavigation && (
-        <motion.nav
-          initial={{ opacity: 0, x: 30 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: 30 }}
-          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed right-0 top-1/2 -translate-y-1/2 z-50 hidden lg:block"
-        >
-          <div className="relative">
-            {/* Decorative gradient background */}
-            <div className="absolute -inset-1 bg-gradient-to-br from-primary/20 via-primary/10 to-transparent rounded-2xl blur-sm opacity-50" />
-
-            {/* Main container */}
-            <div className="relative bg-white/80 backdrop-blur-xl rounded-2xl shadow-2xl p-4 border border-gray-200/30">
-              {/* Top accent line */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-12 h-0.5 bg-gradient-to-r from-transparent via-primary/60 to-transparent rounded-full" />
-
-              <div className="flex flex-col gap-2">
-                {navigationItems.map((item, index) => (
-                  <button
-                    key={item.id}
-                    onClick={() => scrollToSection(item.id)}
-                    className={`
-                      relative px-5 py-2.5 rounded-xl text-left transition-all duration-300 group overflow-hidden
-                      ${
-                        activeSection === item.id
-                          ? "text-white"
-                          : "text-gray-700 hover:text-primary"
-                      }
-                    `}
-                  >
-                    {/* Active background gradient */}
-                    {activeSection === item.id && (
-                      <motion.div
-                        layoutId="activeSection"
-                        className="absolute inset-0 bg-gradient-to-r from-primary via-primary-dark to-primary rounded-xl shadow-lg shadow-primary/30"
-                        transition={{
-                          type: "spring",
-                          bounce: 0.25,
-                          duration: 0.7,
-                        }}
-                      />
-                    )}
-
-                    {/* Hover background */}
-                    {activeSection !== item.id && (
-                      <div className="absolute inset-0 bg-gradient-to-r from-gray-50/0 via-gray-50/50 to-gray-50/0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    )}
-
-                    {/* Content */}
-                    <div className="relative z-10 flex items-center gap-3">
-                      {/* Number badge */}
-                      <span
-                        className={`
-                          w-6 h-6 rounded-lg flex items-center justify-center text-xs font-bold transition-all duration-300 flex-shrink-0
-                          ${
-                            activeSection === item.id
-                              ? "bg-white/20 text-white backdrop-blur-sm"
-                              : "bg-gray-100 text-gray-500 group-hover:bg-primary/10 group-hover:text-primary"
-                          }
-                        `}
-                      >
-                        {index + 1}
-                      </span>
-
-                      {/* Label */}
-                      <span className="font-medium text-xs leading-snug whitespace-nowrap">
-                        {item.label}
-                      </span>
-                    </div>
-                  </button>
-                ))}
-              </div>
-
-              {/* Bottom accent line */}
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-0.5 bg-gradient-to-r from-transparent via-primary/60 to-transparent rounded-full" />
-            </div>
-          </div>
-        </motion.nav>
-      )}
-
       {/* Hero Section - Full Screen Video */}
       <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
         {/* Video Background */}
@@ -542,13 +427,12 @@ export default function EMS() {
             <div className="space-y-8">
               {/* Card 1 */}
               <motion.div
-                initial={{ opacity: 0, y: 80 }}
-                animate={
-                  fecoInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 80 }
-                }
+                ref={card1Ref}
+                initial={{ opacity: 0, y: 80, scale: 0.7 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: false, margin: "-100px" }}
                 transition={{
-                  duration: 0.8,
-                  delay: 0.6,
+                  duration: 1.6,
                   ease: [0.16, 1, 0.3, 1],
                 }}
                 className="group relative bg-white rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-xl transition-shadow duration-500"
@@ -578,13 +462,12 @@ export default function EMS() {
 
               {/* Card 2 - Reversed (Image Right) */}
               <motion.div
-                initial={{ opacity: 0, y: 80 }}
-                animate={
-                  fecoInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 80 }
-                }
+                ref={card2Ref}
+                initial={{ opacity: 0, y: 80, scale: 0.7 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: false, margin: "-100px" }}
                 transition={{
-                  duration: 0.8,
-                  delay: 0.7,
+                  duration: 1.6,
                   ease: [0.16, 1, 0.3, 1],
                 }}
                 className="group relative bg-white rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-xl transition-shadow duration-500"
@@ -614,13 +497,12 @@ export default function EMS() {
 
               {/* Card 3 */}
               <motion.div
-                initial={{ opacity: 0, y: 80 }}
-                animate={
-                  fecoInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 80 }
-                }
+                ref={card3Ref}
+                initial={{ opacity: 0, y: 80, scale: 0.7 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: false, margin: "-100px" }}
                 transition={{
-                  duration: 0.8,
-                  delay: 0.8,
+                  duration: 1.6,
                   ease: [0.16, 1, 0.3, 1],
                 }}
                 className="group relative bg-white rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-xl transition-shadow duration-500"
@@ -650,13 +532,12 @@ export default function EMS() {
 
               {/* Card 4 - Reversed (Image Right) */}
               <motion.div
-                initial={{ opacity: 0, y: 80 }}
-                animate={
-                  fecoInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 80 }
-                }
+                ref={card4Ref}
+                initial={{ opacity: 0, y: 80, scale: 0.7 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: false, margin: "-100px" }}
                 transition={{
-                  duration: 0.8,
-                  delay: 0.9,
+                  duration: 1.6,
                   ease: [0.16, 1, 0.3, 1],
                 }}
                 className="group relative bg-white rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-xl transition-shadow duration-500"
