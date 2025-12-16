@@ -31,7 +31,6 @@ export default function Navbar() {
       dropdown: [
         { label: t("nav.energyEfficiency"), href: "/services/ems" },
         { label: t("nav.zeroEnergyBuilding"), href: "/services/zeb" },
-        { label: t("nav.re100"), href: "/services/re100" },
         { label: t("nav.greenEnergy"), href: "/services/green-energy" },
       ],
     },

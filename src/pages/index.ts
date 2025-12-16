@@ -8,4 +8,4 @@ export { default as Login } from "./Login";
 export { KeicoPlus, Values, ExecutiveIntro, History } from "./about";
 
 // Services pages
-export { EMS, ZEB, RE100, GreenEnergy } from "./services";
+export { EMS, ZEB, GreenEnergy } from "./services";

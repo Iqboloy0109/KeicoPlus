@@ -12,7 +12,6 @@ import {
   History,
   EMS,
   ZEB,
-  RE100,
   GreenEnergy,
 } from "./pages";
 
@@ -32,7 +31,6 @@ function App() {
           {/* Services routes */}
           <Route path="services/ems" element={<EMS />} />
           <Route path="services/zeb" element={<ZEB />} />
-          <Route path="services/re100" element={<RE100 />} />
           <Route path="services/green-energy" element={<GreenEnergy />} />
           <Route path="technology" element={<Technology />} />
           <Route path="news" element={<News />} />

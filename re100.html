@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RE100 - 100% 재생 에너지로 | KEICO+</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #003DA5;
+            --dark-navy: #001E62;
+            --bright-orange: #FF4444;
+            --light-orange: #FF6B35;
+            --pure-white: #FFFFFF;
+            --light-gray: #F5F5F5;
+            --ultra-light-gray: #FAFAFA;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --light-blue: #E8F4FF;
+            --light-purple: #E8E7FF;
+            --card-purple: #D5DBFF;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', 'Malgun Gothic', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--dark-navy);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            font-size: 14px;
+            color: var(--text-gray);
+            font-weight: 400;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s;
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .nav-links a.active {
+            color: var(--primary-blue);
+            border-bottom: 2px solid var(--primary-blue);
+        }
+
+        .login-btn {
+            background: var(--primary-blue);
+            color: white;
+            padding: 10px 28px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .login-btn:hover {
+            background: var(--dark-navy);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 61, 165, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(0, 30, 98, 0.95), rgba(0, 61, 165, 0.9)),
+                        url('data:image/svg+xml,<svg width="1920" height="1080" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="%23003DA5"/><circle cx="200" cy="200" r="150" fill="rgba(255,255,255,0.05)"/><circle cx="1600" cy="800" r="200" fill="rgba(255,255,255,0.03)"/></svg>');
+            background-size: cover;
+            background-position: center;
+            padding: 140px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--bright-orange), var(--light-orange));
+            color: white;
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(255, 68, 68, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 4px 12px rgba(255, 68, 68, 0.3);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 6px 20px rgba(255, 68, 68, 0.4);
+            }
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .hero h1 .highlight {
+            color: #FFD700;
+            position: relative;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--light-orange), var(--bright-orange));
+            color: white;
+            padding: 18px 48px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 12px rgba(255, 68, 68, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 16px rgba(255, 68, 68, 0.4);
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 100px 40px;
+            position: relative;
+        }
+
+        .section-white {
+            background: white;
+        }
+
+        .section-gray {
+            background: var(--ultra-light-gray);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--bright-orange), var(--light-orange));
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 16px rgba(255, 68, 68, 0.3);
+        }
+
+        .section-title {
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--dark-navy);
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .section-description {
+            font-size: 18px;
+            color: var(--text-gray);
+            margin-bottom: 60px;
+            line-height: 1.8;
+        }
+
+        /* Question Section */
+        .question-section {
+            background: var(--light-blue);
+            text-align: center;
+        }
+
+        .question-box {
+            background: white;
+            padding: 60px 50px;
+            border-radius: 20px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .question-box h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--dark-navy);
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+
+        .question-box p {
+            font-size: 18px;
+            color: var(--text-gray);
+            line-height: 1.8;
+        }
+
+        /* Differentiators Grid */
+        .diff-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .diff-card {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .diff-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .diff-icon {
+            font-size: 48px;
+            margin-bottom: 24px;
+        }
+
+        .diff-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--dark-navy);
+            margin-bottom: 16px;
+        }
+
+        .diff-card p {
+            font-size: 15px;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* Roadmap Grid */
+        .roadmap-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .roadmap-card {
+            background: linear-gradient(135deg, var(--light-purple) 0%, var(--card-purple) 100%);
+            padding: 40px;
+            border-radius: 16px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .roadmap-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-navy) 100%);
+            opacity: 0;
+            transition: opacity 0.4s;
+            z-index: 0;
+        }
+
+        .roadmap-card:hover::before {
+            opacity: 1;
+        }
+
+        .roadmap-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0, 61, 165, 0.3);
+        }
+
+        .roadmap-card > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .roadmap-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--dark-navy);
+            margin-bottom: 16px;
+            transition: color 0.4s;
+        }
+
+        .roadmap-card p {
+            font-size: 15px;
+            color: var(--text-dark);
+            line-height: 1.7;
+            transition: color 0.4s;
+        }
+
+        .roadmap-card:hover h3,
+        .roadmap-card:hover p {
+            color: white;
+        }
+
+        /* Benefits Grid */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .benefit-card {
+            background: linear-gradient(135deg, var(--light-purple) 0%, var(--card-purple) 100%);
+            padding: 60px 40px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, var(--bright-orange) 0%, var(--light-orange) 100%);
+            transform: scaleX(0);
+            transition: transform 0.4s;
+        }
+
+        .benefit-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 16px 32px rgba(102, 126, 234, 0.3);
+        }
+
+        .benefit-number {
+            font-size: 56px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 16px;
+        }
+
+        .benefit-label {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--dark-navy);
+            margin-bottom: 12px;
+        }
+
+        .benefit-description {
+            font-size: 15px;
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        /* Video Section */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .video-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .video-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .video-thumbnail {
+            position: relative;
+            background: linear-gradient(135deg, var(--light-purple) 0%, var(--card-purple) 100%);
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .play-button {
+            width: 70px;
+            height: 70px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+        }
+
+        .play-button::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 24px solid var(--primary-blue);
+            border-top: 16px solid transparent;
+            border-bottom: 16px solid transparent;
+            margin-left: 6px;
+        }
+
+        .video-card:hover .play-button {
+            transform: scale(1.15);
+        }
+
+        .video-info {
+            padding: 24px;
+        }
+
+        .video-info h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--dark-navy);
+            margin-bottom: 8px;
+        }
+
+        .video-info p {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        /* Pricing Section */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            border: 2px solid transparent;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .pricing-card:hover {
+            border-color: var(--primary-blue);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px rgba(0, 61, 165, 0.2);
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        .pricing-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--dark-navy);
+            margin-bottom: 16px;
+        }
+
+        .pricing-amount {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 8px;
+        }
+
+        .pricing-amount span {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-gray);
+        }
+
+        .pricing-period {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .pricing-features li {
+            padding: 12px 0;
+            font-size: 15px;
+            color: var(--text-dark);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            color: var(--primary-blue);
+            font-weight: 700;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 16px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-question {
+            padding: 24px 30px;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--dark-navy);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s;
+        }
+
+        .faq-question:hover {
+            background: var(--ultra-light-gray);
+        }
+
+        .faq-icon {
+            font-size: 24px;
+            color: var(--primary-blue);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 30px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 30px 24px 30px;
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            font-size: 16px;
+            color: var(--text-gray);
+            line-height: 1.8;
+        }
+
+        /* BEMS Section */
+        .bems-section {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-navy) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bems-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .bems-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .bems-section .section-badge {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .bems-section .section-title {
+            color: white;
+        }
+
+        .bems-section .section-description {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .bems-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .bems-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 40px 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .bems-card:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .bems-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1.5;
+        }
+
+        /* CTA Footer */
+        .cta-footer {
+            background: linear-gradient(135deg, rgba(0, 30, 98, 0.95), rgba(0, 61, 165, 0.9)),
+                        url('data:image/svg+xml,<svg width="1920" height="600" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="%23001E62"/></svg>');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            padding: 100px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(255, 107, 53, 0.1) 0%, transparent 50%);
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-footer h2 {
+            font-size: 44px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 24px;
+            line-height: 1.3;
+        }
+
+        .cta-footer p {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+
+        /* Scroll Animation */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .roadmap-grid,
+            .benefits-grid,
+            .bems-grid,
+            .diff-grid,
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 100px 20px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .section {
+                padding: 60px 20px;
+            }
+
+            .benefit-number {
+                font-size: 42px;
+            }
+
+            .cta-footer h2 {
+                font-size: 32px;
+            }
+        }
+
+        /* Floating Animation */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                KEICO+ <span>RE100 Solution</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#hero">홈</a></li>
+                <li><a href="#why-keico" class="active">특장점</a></li>
+                <li><a href="#roadmap">로드맵</a></li>
+                <li><a href="#benefits">기대효과</a></li>
+                <li><a href="#bems">BEMS</a></li>
+                <li><a href="#pricing">가격</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <button class="login-btn">문의하기</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-badge">RE100, KEICO+와 함께 현실로</div>
+            <h1>효율성을 넘어,<br><span class="highlight">100% 재생 에너지로</span></h1>
+            <p>
+                에너지 효율을 넘어, 지속 가능한 100% 재생에너지 시대로.<br>
+                KEICO가 당신의 RE100 여정을 가장 현실적으로 함께합니다.<br>
+                복잡한 이행 절차와 비용 부담, 이제 전략적 접근으로 해결하세요.
+            </p>
+            <button class="cta-button">체험 및 도입 문의</button>
+        </div>
+    </section>
+
+    <!-- Question Section -->
+    <section class="section question-section animate-on-scroll">
+        <div class="container">
+            <div class="question-box">
+                <h2>
+                    RE100 달성, 왜 어렵게만 느껴질까요?<br>
+                    복잡한 인증 절차와 높은 비용 부담 때문에 망설이고 계신가요?
+                </h2>
+                <p>
+                    RE100 이행은 단순히 재생에너지 사용을 늘리는 것이 아닙니다.<br>
+                    체계적인 에너지 관리, 비용 최적화, 그리고 지속가능한 운영 전략이 필요합니다.<br>
+                    KEICO+는 진단부터 인증까지, 모든 과정을 함께하는 RE100 토탈 솔루션입니다.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why KEICO Section -->
+    <section class="section section-white animate-on-scroll" id="why-keico">
+        <div class="container">
+            <div class="section-badge">01</div>
+            <h2 class="section-title">왜 KEICO+ RE100 솔루션인가?</h2>
+            <p class="section-description">KEICO+만의 차별화된 RE100 접근법을 경험하세요</p>
+
+            <div class="diff-grid">
+                <div class="diff-card">
+                    <div class="diff-icon">🎯</div>
+                    <h3>맞춤형 전략 수립</h3>
+                    <p>기업별 에너지 사용 패턴을 정밀 분석하여 최적의 RE100 이행 로드맵을 제시합니다</p>
+                </div>
+
+                <div class="diff-card">
+                    <div class="diff-icon">💰</div>
+                    <h3>비용 절감 극대화</h3>
+                    <p>FECO 시스템으로 에너지 효율화를 먼저 달성하여 RE100 전환 비용을 20% 이상 절감합니다</p>
+                </div>
+
+                <div class="diff-card">
+                    <div class="diff-icon">🏆</div>
+                    <h3>원스톱 토탈 서비스</h3>
+                    <p>진단, 시스템 구축, K-RE100 지원, 인증까지 모든 과정을 통합 관리합니다</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section class="section section-gray animate-on-scroll" id="roadmap">
+        <div class="container">
+            <div class="section-badge">02</div>
+            <h2 class="section-title">RE100 로드맵</h2>
+            <p class="section-description">체계적인 4단계 프로세스로 RE100을 현실화합니다. 진단부터 인증까지, KEICO+가 모든 과정을 함께합니다.</p>
+
+            <div class="roadmap-grid">
+                <div class="roadmap-card floating" style="animation-delay: 0s;">
+                    <h3>STEP 1: 에너지 사용 환경 분석</h3>
+                    <p>건물 정보, 설비 용량, TOU(시간대별 요금제) 패턴 분석을 통한 Baseline 설정 및 감축 목표 확정</p>
+                </div>
+
+                <div class="roadmap-card floating" style="animation-delay: 0.2s;">
+                    <h3>STEP 2: FECO 시스템 구축 및 효율화</h3>
+                    <p>고효율 스마트팩토리, 장기저리대출 등 FECO 시스템 설치 및 시설 개선을 통한 에너지 소비 최소화와 실질 비용 절감</p>
+                </div>
+
+                <div class="roadmap-card floating" style="animation-delay: 0.4s;">
+                    <h3>STEP 3: K-RE100 지원</h3>
+                    <p>녹색 프리미엄 가입, REC(신재생에너지 공급인증서) 구매 또는 PPA(전력구매) 계약을 통해 재생에너지 달성 및 지원금 확충</p>
+                </div>
+
+                <div class="roadmap-card floating" style="animation-delay: 0.6s;">
+                    <h3>STEP 4: 인증 및 사후 성과 관리</h3>
+                    <p>한국에너지공단에서 공식 K-RE100 인증 획득 지원. FECO 시스템을 활용한 이행성과 검증과 모니터링 정기 보고 생성</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section section-white animate-on-scroll" id="benefits">
+        <div class="container">
+            <div class="section-badge">03</div>
+            <h2 class="section-title">기대 효과</h2>
+            <p class="section-description">지속 가능한 미래를 위한 투자, RE100이 가져올 실질적인 변화</p>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-number">20%+</div>
+                    <div class="benefit-label">Cost Economy</div>
+                    <p class="benefit-description">에너지 비용 평균 20% 이상 절감</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-number">A</div>
+                    <div class="benefit-label">ESG Compliance</div>
+                    <p class="benefit-description">RE100 이행 및 ESG 평가 등급 A 달성</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-number">100%</div>
+                    <div class="benefit-label">Future Proof</div>
+                    <p class="benefit-description">미래 전략망 유연성 확보</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Demo Section -->
+    <section class="section section-gray animate-on-scroll">
+        <div class="container">
+            <div class="section-badge">04</div>
+            <h2 class="section-title">소개 동영상</h2>
+            <p class="section-description">RE100 솔루션의 실제 작동 방식을 영상으로 확인하세요</p>
+
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="play-button"></div>
+                    </div>
+                    <div class="video-info">
+                        <h3>RE100 소개 영상</h3>
+                        <p>KEICO+ RE100의 핵심 기능 소개</p>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="play-button"></div>
+                    </div>
+                    <div class="video-info">
+                        <h3>성공 사례</h3>
+                        <p>실제 도입 기업의 성공 스토리</p>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="play-button"></div>
+                    </div>
+                    <div class="video-info">
+                        <h3>시스템 데모</h3>
+                        <p>BEMS 통합 관제 시스템 시연</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BEMS Section -->
+    <section class="section bems-section animate-on-scroll" id="bems">
+        <div class="container bems-content">
+            <div class="section-badge">05</div>
+            <h2 class="section-title">AI 기반 솔루션을 통한 ZEB 인증 단순화 및 에너지 관리 혁신</h2>
+            <p class="section-description">
+                ZEB 인증 유지에 필수적인 건물 에너지 관리 시스템(BEMS)의 핵심 기능인 통합 관제, 실시간 데이터 기록, 리포팅 기능을<br>
+                FECO를 통해 제공합니다. 복잡한 데이터 취합과 분석을 자동화하여 인증 과정을 가속화합니다.
+            </p>
+
+            <div style="margin: 40px 0;">
+                <h3 style="font-size: 36px; font-weight: 800; text-align: center;">BEMS 수준의 통합 관제 데이터</h3>
+            </div>
+
+            <div class="bems-grid">
+                <div class="bems-card">
+                    <h3>ZEB 인증 필수 BEMS 기능 완벽화 제공</h3>
+                </div>
+
+                <div class="bems-card">
+                    <h3>실시간 데이터 관제·기록·리포팅 지원</h3>
+                </div>
+
+                <div class="bems-card">
+                    <h3>자동화된 분석 기반의 인증 절차 최적화</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section section-white animate-on-scroll" id="pricing">
+        <div class="container">
+            <div class="section-badge">06</div>
+            <h2 class="section-title">가격 정책</h2>
+            <p class="section-description">기업 규모와 에너지 사용량에 따라 최적의 요금제를 선택하세요</p>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <div class="pricing-title">스탠다드 플랜</div>
+                        <div class="pricing-amount">문의<span> 필요</span></div>
+                        <div class="pricing-period">중소기업 / 건물 단위</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>에너지 사용 환경 진단 및 분석</li>
+                        <li>FECO 시스템 기본 구축</li>
+                        <li>K-RE100 이행 컨설팅</li>
+                        <li>REC 구매 또는 녹색 프리미엄 지원</li>
+                        <li>월간 리포트 및 모니터링</li>
+                        <li>인증 획득 지원</li>
+                    </ul>
+                    <button class="cta-button" style="width: 100%;">상담 신청</button>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <div class="pricing-title">엔터프라이즈 플랜</div>
+                        <div class="pricing-amount">문의<span> 필요</span></div>
+                        <div class="pricing-period">대기업 / 다중 사업장</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>전사 에너지 환경 진단 및 전략 수립</li>
+                        <li>FECO + BEMS 통합 시스템 구축</li>
+                        <li>K-RE100 전체 이행 관리</li>
+                        <li>PPA 계약 및 REC 구매 통합 지원</li>
+                        <li>실시간 모니터링 및 AI 분석</li>
+                        <li>인증 획득 및 사후 관리</li>
+                        <li>전담 컨설턴트 배정</li>
+                    </ul>
+                    <button class="cta-button" style="width: 100%;">상담 신청</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section section-gray animate-on-scroll" id="faq">
+        <div class="container">
+            <div class="section-badge">07</div>
+            <h2 class="section-title">자주 묻는 질문</h2>
+            <p class="section-description">RE100에 대해 궁금하신 사항을 확인하세요</p>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>RE100이 무엇이며, 왜 필요한가요?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            RE100(Renewable Energy 100%)은 기업이 사용하는 전력의 100%를 재생에너지로 전환하는 글로벌 캠페인입니다.
+                            애플, 구글 등 글로벌 기업들이 협력업체에 RE100 이행을 요구하고 있으며,
+                            ESG 경영과 탄소중립 달성을 위한 필수 과제로 자리잡고 있습니다.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>K-RE100과 RE100의 차이는 무엇인가요?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            K-RE100은 한국형 RE100 제도로, 국내 기업의 실정에 맞게 설계되었습니다.
+                            녹색 프리미엄, REC 구매, PPA 계약, 자가발전 등 다양한 이행 수단을 제공하며,
+                            한국에너지공단을 통해 공식 인증을 받을 수 있습니다.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>RE100 이행에 얼마나 비용이 드나요?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            비용은 기업 규모, 에너지 사용량, 선택한 이행 수단에 따라 다릅니다.
+                            KEICO+는 FECO 시스템을 통해 먼저 에너지 효율을 개선하여 전체 비용을 20% 이상 절감하고,
+                            가장 경제적인 RE100 이행 방안을 제시합니다. 정확한 견적은 무료 진단 후 제공됩니다.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>RE100 인증까지 얼마나 걸리나요?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            일반적으로 진단부터 K-RE100 인증까지 6개월~1년 정도 소요됩니다.
+                            KEICO+는 체계적인 프로젝트 관리와 원스톱 서비스로 이 기간을 단축하며,
+                            FECO 시스템 구축과 동시에 RE100 이행을 준비하여 효율적으로 진행합니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Footer -->
+    <section class="cta-footer">
+        <div class="cta-content">
+            <h2>RE100 여정, 지금 시작하세요</h2>
+            <p>KEICO+ 에너지 전문가가 무료 진단부터 인증까지 모든 과정을 함께합니다.<br>지속 가능한 미래를 위한 첫 걸음을 내디뎌보세요.</p>
+            <button class="cta-button">무료 진단 신청하기</button>
+        </div>
+    </section>
+
+    <script>
+        // Scroll Animation Observer
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const wasActive = item.classList.contains('active');
+
+                // Close all items
+                document.querySelectorAll('.faq-item').forEach(faqItem => {
+                    faqItem.classList.remove('active');
+                });
+
+                // Open clicked item if it wasn't active
+                if (!wasActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth Scroll for Navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Counter Animation for Benefits
+        const animateCounter = (element) => {
+            const text = element.textContent;
+            let target = 0;
+            let suffix = '';
+
+            if (text.includes('20')) {
+                target = 20;
+                suffix = '%+';
+            } else if (text.includes('100')) {
+                target = 100;
+                suffix = '%';
+            } else if (text.includes('A')) {
+                element.textContent = 'A';
+                return;
+            }
+
+            let current = 0;
+            const increment = target / 50;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target + suffix;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current) + suffix;
+                }
+            }, 30);
+        };
+
+        // Benefits Counter Observer
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const number = entry.target.querySelector('.benefit-number');
+                    if (number && !number.classList.contains('counted')) {
+                        number.classList.add('counted');
+                        animateCounter(number);
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.benefit-card').forEach(card => {
+            statsObserver.observe(card);
+        });
+
+        // Parallax Effect for Hero
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const scrolled = window.pageYOffset;
+                    const hero = document.querySelector('.hero-content');
+                    if (hero && scrolled < 800) {
+                        hero.style.transform = `translateY(${scrolled * 0.4}px)`;
+                        hero.style.opacity = 1 - (scrolled / 800);
+                    }
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        // Active Navigation Link on Scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
