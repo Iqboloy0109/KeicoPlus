@@ -1,5 +1,6 @@
 {
   "nav": {
+    "home": "Home",
     "aboutCompany": "About Company",
     "keicoPlus": "KEICO PLUS",
     "values": "Values",
@@ -426,6 +427,85 @@
       "title": "Ask Anything",
       "description": "KEICO PLUS answers concisely and smartly.",
       "button": "Inquiry"
+    }
+  },
+  "re100": {
+    "hero": {
+      "title": "RE 100",
+      "subtitle": "100% Renewable Energy for a Sustainable Future"
+    },
+    "intro": {
+      "title": "RE 100, Make it Real with KEICO PLUS",
+      "question": "Why does RE100 achievement seem difficult?",
+      "description": "Are you hesitating because of complex certification procedures and high cost burdens? KEICO PLUS is a total RE100 solution that accompanies you from diagnosis to certification."
+    },
+    "values": {
+      "title": "Beyond Efficiency,",
+      "subtitle": "To 100% Renewable Energy",
+      "description": "Beyond energy efficiency, towards a 100% renewable energy era. KEICO accompanies your RE100 journey most realistically.",
+      "card1": {
+        "title": "Customized Strategy Development",
+        "description": "Analyze corporate energy usage patterns and present optimal RE100 implementation roadmap"
+      },
+      "card2": {
+        "title": "Maximize Cost Reduction",
+        "description": "Achieve energy efficiency first with FECO system to reduce RE100 conversion costs by over 20%"
+      },
+      "card3": {
+        "title": "One-Stop Total Service",
+        "description": "Integrated management of all processes from diagnosis, system construction, K-RE100 support, to certification"
+      }
+    },
+    "roadmap": {
+      "title": "RE 100 Roadmap",
+      "step1": {
+        "step": "STEP 1",
+        "title": "Energy Use Environment Analysis",
+        "description": "Set baseline through building info, facility capacity, TOU pattern analysis"
+      },
+      "step2": {
+        "step": "STEP 2",
+        "title": "FECO System Construction",
+        "description": "Minimize energy consumption through high-efficiency system installation and facility improvement"
+      },
+      "step3": {
+        "step": "STEP 3",
+        "title": "K-RE100 Support",
+        "description": "Achieve renewable energy through green premium, REC purchase, PPA contract"
+      },
+      "step4": {
+        "step": "STEP 4",
+        "title": "Certification and Follow-up Management",
+        "description": "Support K-RE100 certification acquisition and verification, monitoring of implementation performance"
+      }
+    },
+    "bems": {
+      "title": "BEMS-Level Integrated Control Data",
+      "description": "Provides integrated control, real-time data recording, and reporting functions, which are core functions of Building Energy Management System (BEMS) essential for ZEB certification maintenance, through FECO.",
+      "card1": {
+        "title": "Complete BEMS Functions Essential for ZEB Certification"
+      },
+      "card2": {
+        "title": "Real-time Data Control, Recording, and Reporting Support"
+      },
+      "card3": {
+        "title": "Automated Analysis-based Certification Process Optimization"
+      }
+    },
+    "benefits": {
+      "title": "Expected Benefits",
+      "card1": {
+        "label": "Cost Economy",
+        "description": "Average energy cost reduction of over 20%"
+      },
+      "card2": {
+        "label": "ESG Compliance",
+        "description": "RE100 implementation and ESG rating grade A achievement"
+      },
+      "card3": {
+        "label": "Future Proof",
+        "description": "Secure future strategic network flexibility"
+      }
     }
   },
   "values": {

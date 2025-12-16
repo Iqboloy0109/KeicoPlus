@@ -1,5 +1,6 @@
 {
   "nav": {
+    "home": "홈",
     "aboutCompany": "회사 소개",
     "keicoPlus": "KEICO PLUS",
     "values": "핵심 가치",
@@ -426,6 +427,85 @@
       "title": "무엇이든 물어보세요",
       "description": "KEICO PLUS가 간결하고 똑똑하게 답해드립니다.",
       "button": "문의하기"
+    }
+  },
+  "re100": {
+    "hero": {
+      "title": "RE 100",
+      "subtitle": "100% 재생 에너지로 가는 지속 가능한 미래"
+    },
+    "intro": {
+      "title": "RE 100, KEICO PLUS와 함께 현실로",
+      "question": "RE100 달성, 왜 어렵게만 느껴질까요?",
+      "description": "복잡한 인증 절차와 높은 비용 부담 때문에 망설이고 계신가요? KEICO PLUS는 진단부터 인증까지 모든 과정을 함께하는 RE100 토탈 솔루션입니다."
+    },
+    "values": {
+      "title": "효율성을 넘어,",
+      "subtitle": "100% 재생 에너지로",
+      "description": "에너지 효율을 넘어, 지속 가능한 100% 재생에너지 시대로. KEICO가 당신의 RE100 여정을 가장 현실적으로 함께합니다.",
+      "card1": {
+        "title": "맞춤형 전략 수립",
+        "description": "기업별 에너지 사용 패턴을 정밀 분석하여 최적의 RE100 이행 로드맵 제시"
+      },
+      "card2": {
+        "title": "비용 절감 극대화",
+        "description": "FECO 시스템으로 에너지 효율화를 먼저 달성하여 RE100 전환 비용 20% 이상 절감"
+      },
+      "card3": {
+        "title": "원스톱 토탈 서비스",
+        "description": "진단, 시스템 구축, K-RE100 지원, 인증까지 모든 과정을 통합 관리"
+      }
+    },
+    "roadmap": {
+      "title": "RE 100 로드맵",
+      "step1": {
+        "step": "STEP 1",
+        "title": "에너지 사용 환경 분석",
+        "description": "건물 정보, 설비 용량, TOU 패턴 분석을 통한 Baseline 설정"
+      },
+      "step2": {
+        "step": "STEP 2",
+        "title": "FECO 시스템 구축",
+        "description": "고효율 시스템 설치 및 시설 개선을 통한 에너지 소비 최소화"
+      },
+      "step3": {
+        "step": "STEP 3",
+        "title": "K-RE100 지원",
+        "description": "녹색 프리미엄, REC 구매, PPA 계약을 통한 재생에너지 달성"
+      },
+      "step4": {
+        "step": "STEP 4",
+        "title": "인증 및 사후 관리",
+        "description": "K-RE100 인증 획득 지원 및 이행성과 검증, 모니터링"
+      }
+    },
+    "bems": {
+      "title": "BEMS 수준의 통합 관제 데이터",
+      "description": "ZEB 인증 유지에 필수적인 건물 에너지 관리 시스템(BEMS)의 핵심 기능인 통합 관제, 실시간 데이터 기록, 리포팅 기능을 FECO를 통해 제공합니다.",
+      "card1": {
+        "title": "ZEB 인증 필수 BEMS 기능 완벽화 제공"
+      },
+      "card2": {
+        "title": "실시간 데이터 관제·기록·리포팅 지원"
+      },
+      "card3": {
+        "title": "자동화된 분석 기반의 인증 절차 최적화"
+      }
+    },
+    "benefits": {
+      "title": "기대 효과",
+      "card1": {
+        "label": "Cost Economy",
+        "description": "에너지 비용 평균 20% 이상 절감"
+      },
+      "card2": {
+        "label": "ESG Compliance",
+        "description": "RE100 이행 및 ESG 평가 등급 A 달성"
+      },
+      "card3": {
+        "label": "Future Proof",
+        "description": "미래 전략망 유연성 확보"
+      }
     }
   },
   "values": {
