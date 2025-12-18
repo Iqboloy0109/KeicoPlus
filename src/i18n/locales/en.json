@@ -508,6 +508,14 @@
       }
     }
   },
+  "greenEnergy": {
+    "hero": {
+      "tag": "Sustainable Energy Solutions",
+      "title": "Green Energy Business",
+      "subtitle": "FECO: AI Platform Opening the Future of Green Energy",
+      "description": "KEICO+ deploys a comprehensive green energy business that goes beyond building energy efficiency through the AI-based FECO platform, promoting renewable energy use and contributing to power grid stabilization."
+    }
+  },
   "values": {
     "title": "Values",
     "bannerTitle": "Values",

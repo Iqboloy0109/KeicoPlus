@@ -508,6 +508,14 @@
       }
     }
   },
+  "greenEnergy": {
+    "hero": {
+      "tag": "지속 가능한 에너지 솔루션",
+      "title": "그린에너지사업",
+      "subtitle": "FECO: 그린 에너지의 미래를 여는 AI 플랫폼",
+      "description": "KEICO+는 AI 기반의 FECO 플랫폼을 통해 건물의 에너지 효율화를 넘어, 재생에너지 사용을 촉진하고 전력망 안정화에 기여하는 종합 그린 에너지 사업을 전개합니다."
+    }
+  },
   "values": {
     "title": "핵심 가치",
     "bannerTitle": "핵심 가치",
