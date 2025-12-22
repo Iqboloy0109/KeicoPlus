@@ -223,14 +223,16 @@ export default function Navbar() {
               </AnimatePresence>
             </div>
 
-            {/* Login Button */}
-            <Link
-              to="/login"
+            {/* FECO Button */}
+            <a
+              href="https://feco.keico.co.kr/#/login"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2 btn-primary text-sm"
             >
               <User size={16} />
-              {t("nav.login")}
-            </Link>
+              FECO
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -332,14 +334,16 @@ export default function Navbar() {
                 </div>
               </div>
 
-              {/* Mobile Login Button */}
-              <Link
-                to="/login"
+              {/* Mobile FECO Button */}
+              <a
+                href="https://feco.keico.co.kr/#/login"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 btn-primary w-full text-sm mt-4"
               >
                 <User size={16} />
-                {t("nav.login")}
-              </Link>
+                FECO
+              </a>
             </div>
           </motion.div>
         )}

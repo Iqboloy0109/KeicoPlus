@@ -63,10 +63,10 @@ export default function RE100() {
             muted
             loop
             playsInline
-            preload="auto"
             className="w-full h-full object-cover"
+            style={{ opacity: 0.8 }}
           >
-            <source src="https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_30fps.mp4" type="video/mp4" />
+            <source src="https://videos.pexels.com/video-files/857010/857010-hd_1920_1080_30fps.mp4" type="video/mp4" />
           </video>
           {/* Dark Overlay - Same as KEICO PLUS */}
           <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3F]/70 via-[#0A1E3F]/50 to-[#0A1E3F]/70" />

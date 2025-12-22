@@ -512,8 +512,61 @@
     "hero": {
       "tag": "Sustainable Energy Solutions",
       "title": "Green Energy Business",
-      "subtitle": "FECO: AI Platform Opening the Future of Green Energy",
-      "description": "KEICO+ deploys a comprehensive green energy business that goes beyond building energy efficiency through the AI-based FECO platform, promoting renewable energy use and contributing to power grid stabilization."
+      "subtitle": "",
+      "description": ""
+    },
+    "feco": {
+      "titleEn": "FECO: AI Platform Opening the Future of Green Energy",
+      "descriptionEn": "KEICO+ deploys a comprehensive green energy business that goes beyond building energy efficiency through the AI-based FECO platform, promoting renewable energy use and contributing to power grid stabilization.",
+      "titleKo": "FECO: 그린 에너지의 미래를 여는 AI 플랫폼",
+      "descriptionKo": "FECO는 AI 예측과 정밀 제어를 통해 건물 에너지의 효율성(Efficiency), 자립성(Independence), 유연성(Flexibility)을 동시에 구현하는 통합 솔루션입니다."
+    },
+    "coreDomains": {
+      "title": "Three Core Domains",
+      "subtitle": "3대 핵심 영역",
+      "carbonNeutral": {
+        "title": "Carbon Neutrality",
+        "titleKo": "탄소 중립",
+        "items": [
+          "AI-based energy consumption prediction and optimization",
+          "30-40% reduction in renewable energy purchase costs",
+          "K-RE100 certification automatic reporting support"
+        ]
+      },
+      "energyIndependence": {
+        "title": "Energy Independence",
+        "titleKo": "에너지 자립",
+        "items": [
+          "Real-time energy independence rate monitoring",
+          "AI-based demand forecasting and load management",
+          "ZEB certification essential data automatic generation"
+        ]
+      },
+      "gridFlexibility": {
+        "title": "Grid Flexibility",
+        "titleKo": "전력망 유연성",
+        "items": [
+          "Automatic DR program participation and revenue generation",
+          "Integrated BEMS-level control environment",
+          "Up to 25% reduction in peak-time power consumption"
+        ]
+      }
+    },
+    "values": {
+      "title": "Value Provided by Green Energy Business",
+      "subtitle": "그린 에너지 사업이 제공하는 가치",
+      "costMinimization": {
+        "title": "Cost Minimization Through AI Pre-Reduction",
+        "description": "KEICO provides optimal reduction strategies through AI-based pre-reduction analysis by diagnosing energy usage patterns and waste factors in advance to reduce unnecessary consumption."
+      },
+      "certification": {
+        "title": "ZEB·K-RE100 Certification Data Automation and Reporting",
+        "description": "KEICO automatically collects and manages energy usage data and calculation standards required for ZEB and K-RE100 certification, generating reports that can be directly used for certification review without complex calculations and documentation."
+      },
+      "bemsControl": {
+        "title": "Operational Efficiency Through BEMS-Level Integrated Control",
+        "description": "KEICO+ provides a BEMS-level integrated control environment to support viewing the operational status of each facility and energy flow at a glance."
+      }
     }
   },
   "values": {

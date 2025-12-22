@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Leaf, Zap, Network, TrendingDown, FileCheck, Gauge } from "lucide-react";
 
 export default function ScrollAnimations() {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
   const isKorean = i18n.language === "ko";
 
   const textHighlightRef = useRef<HTMLDivElement>(null);

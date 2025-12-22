@@ -207,7 +207,7 @@ function SolutionSection({
                 className="flex flex-wrap gap-4"
               >
                 <Link
-                  to="/services"
+                  to="/services/green-energy"
                   className="relative z-50 inline-flex items-center gap-3 px-8 py-4 rounded-full font-semibold text-white border-2 border-white/30 hover:border-white hover:bg-white/20 transition-all duration-300 hover:scale-105"
                 >
                   {solution.cta.secondary}

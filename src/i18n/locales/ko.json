@@ -512,8 +512,61 @@
     "hero": {
       "tag": "지속 가능한 에너지 솔루션",
       "title": "그린에너지사업",
-      "subtitle": "FECO: 그린 에너지의 미래를 여는 AI 플랫폼",
-      "description": "KEICO+는 AI 기반의 FECO 플랫폼을 통해 건물의 에너지 효율화를 넘어, 재생에너지 사용을 촉진하고 전력망 안정화에 기여하는 종합 그린 에너지 사업을 전개합니다."
+      "subtitle": "",
+      "description": ""
+    },
+    "feco": {
+      "titleEn": "FECO: AI Platform Opening the Future of Green Energy",
+      "descriptionEn": "KEICO+ deploys a comprehensive green energy business that goes beyond building energy efficiency through the AI-based FECO platform, promoting renewable energy use and contributing to power grid stabilization.",
+      "titleKo": "FECO: 그린 에너지의 미래를 여는 AI 플랫폼",
+      "descriptionKo": "FECO는 AI 예측과 정밀 제어를 통해 건물 에너지의 효율성(Efficiency), 자립성(Independence), 유연성(Flexibility)을 동시에 구현하는 통합 솔루션입니다."
+    },
+    "coreDomains": {
+      "title": "3대 핵심 영역",
+      "subtitle": "Three Core Domains",
+      "carbonNeutral": {
+        "title": "탄소 중립",
+        "titleKo": "탄소 중립",
+        "items": [
+          "AI 기반 에너지 소비 예측 및 최적화",
+          "재생에너지 구매 비용 30-40% 절감",
+          "K-RE100 인증 자동 리포팅 지원"
+        ]
+      },
+      "energyIndependence": {
+        "title": "에너지 자립",
+        "titleKo": "에너지 자립",
+        "items": [
+          "실시간 에너지 자립률 모니터링",
+          "AI 기반 수요 예측 및 부하 관리",
+          "ZEB 인증 필수 데이터 자동 생성"
+        ]
+      },
+      "gridFlexibility": {
+        "title": "전력망 유연성",
+        "titleKo": "전력망 유연성",
+        "items": [
+          "DR 프로그램 자동 참여 및 수익 창출",
+          "통합 BEMS 수준의 관제 환경 제공",
+          "피크 시간대 전력 소비 최대 25% 절감"
+        ]
+      }
+    },
+    "values": {
+      "title": "그린 에너지 사업이 제공하는 가치",
+      "subtitle": "Value Provided by Green Energy Business",
+      "costMinimization": {
+        "title": "AI 사전 절감을 통한 비용 최소화",
+        "description": "KEICO는 AI 기반 사전 절감 분석을 통해 에너지 사용 패턴과 낭비 요소를 사전에 진단하여 불필요한 소비를 줄일 수 있는 최적의 절감 전략을 제안합니다."
+      },
+      "certification": {
+        "title": "ZEB·K-RE100 인증 데이터 자동화 및 리포팅",
+        "description": "KEICO는 ZEB 및 K-RE100 인증에 필요한 에너지 사용 데이터와 산정 기준을 자동으로 수집·관리하고, 복잡한 계산과 문서 작업 없이 인증 심사에 바로 활용 가능한 리포트를 생성한다."
+      },
+      "bemsControl": {
+        "title": "BEMS 수준 통합 관제를 통한 운영 효율",
+        "description": "KEICO+는 BEMS 수준의 통합 관제 환경을 제공하여 설비별 운영 현황과 에너지 흐름을 한눈에 파악할 수 있도록 지원합니다."
+      }
     }
   },
   "values": {
