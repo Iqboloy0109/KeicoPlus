@@ -112,10 +112,10 @@ export default function Footer() {
             <ul className="space-y-4">
               <li>
                 <Link
-                  to="/services"
+                  to="/services/green-energy"
                   className="text-gray-400 hover:text-primary transition-colors"
                 >
-                  {t("nav.serviceSolution")}
+                  {t("nav.service")}
                 </Link>
               </li>
               <li>
