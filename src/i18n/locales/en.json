@@ -18,10 +18,24 @@
     "login": "Login"
   },
   "hero": {
-    "badge": "AI-Powered IoT Platform",
-    "title1": "Smart Energy.",
-    "title2": "Smarter Future.",
-    "description": "Transform your energy management with AI-driven insights. Reduce costs by up to 40% while contributing to a sustainable future.",
+    "slide1": {
+      "badge": "AI-Powered IoT Platform",
+      "title1": "Smart Energy,",
+      "title2": "Sustainable Future",
+      "description": "We intelligentize energy and create a sustainable future."
+    },
+    "slide2": {
+      "badge": "IoT Energy Solutions",
+      "title1": "Smart Energy,",
+      "title2": "Sustainable Future",
+      "description": "We intelligentize energy and create a sustainable future."
+    },
+    "slide3": {
+      "badge": "Sustainable Future",
+      "title1": "Smart Energy,",
+      "title2": "Sustainable Future",
+      "description": "We intelligentize energy and create a sustainable future."
+    },
     "getStarted": "Get Started",
     "learnMore": "Learn More"
   },

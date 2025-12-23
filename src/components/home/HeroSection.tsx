@@ -8,26 +8,26 @@ const slides = [
   {
     video:
       "https://videos.pexels.com/video-files/3130284/3130284-hd_1920_1080_30fps.mp4",
-    badge: "hero.badge",
-    title1: "Smart Energy,",
-    title2: "Sustainable Future",
-    description: "우리가 에너지를 지능화하고, 지속 가능한 미래를 창조합니다.",
+    badgeKey: "hero.slide1.badge",
+    title1Key: "hero.slide1.title1",
+    title2Key: "hero.slide1.title2",
+    descriptionKey: "hero.slide1.description",
   },
   {
     video:
       "https://videos.pexels.com/video-files/7579968/7579968-hd_1920_1080_25fps.mp4",
-    badge: "IoT Energy Solutions",
-    title1: "Smart Energy,",
-    title2: "Sustainable Future",
-    description: "우리가 에너지를 지능화하고, 지속 가능한 미래를 창조합니다.",
+    badgeKey: "hero.slide2.badge",
+    title1Key: "hero.slide2.title1",
+    title2Key: "hero.slide2.title2",
+    descriptionKey: "hero.slide2.description",
   },
   {
     video:
       "https://videos.pexels.com/video-files/3129671/3129671-hd_1920_1080_30fps.mp4",
-    badge: "Sustainable Future",
-    title1: "Smart Energy,",
-    title2: "Sustainable Future",
-    description: "우리가 에너지를 지능화하고, 지속 가능한 미래를 창조합니다.",
+    badgeKey: "hero.slide3.badge",
+    title1Key: "hero.slide3.title1",
+    title2Key: "hero.slide3.title2",
+    descriptionKey: "hero.slide3.description",
   },
 ];
 
@@ -99,9 +99,7 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="inline-block px-4 py-2 bg-primary/20 text-primary rounded-full text-sm font-medium mb-6"
             >
-              {currentSlide === 0
-                ? t(currentContent.badge)
-                : currentContent.badge}
+              {t(currentContent.badgeKey)}
             </motion.span>
 
             <motion.h1
@@ -110,14 +108,10 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="heading-1 text-white mb-6"
             >
-              {currentSlide === 0
-                ? t(currentContent.title1)
-                : currentContent.title1}
+              {t(currentContent.title1Key)}
               <br />
               <span className="text-gradient">
-                {currentSlide === 0
-                  ? t(currentContent.title2)
-                  : currentContent.title2}
+                {t(currentContent.title2Key)}
               </span>
             </motion.h1>
 
@@ -127,9 +121,7 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-body-light text-lg md:text-xl mb-8 max-w-2xl"
             >
-              {currentSlide === 0
-                ? t(currentContent.description)
-                : currentContent.description}
+              {t(currentContent.descriptionKey)}
             </motion.p>
 
             <motion.div
