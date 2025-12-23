@@ -86,7 +86,7 @@ export default function History() {
         id="section1"
         ref={(node) => {
           timelineSectionRef(node);
-          timelineRef.current = node;
+          timelineRef.current = node as HTMLDivElement | null;
         }}
         className="relative section-padding overflow-hidden"
       >
