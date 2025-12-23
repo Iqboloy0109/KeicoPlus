@@ -18,10 +18,24 @@
     "login": "Login"
   },
   "hero": {
-    "badge": "AI-Powered IoT Platform",
-    "title1": "Smart Energy.",
-    "title2": "Smarter Future.",
-    "description": "Transform your energy management with AI-driven insights. Reduce costs by up to 40% while contributing to a sustainable future.",
+    "slide1": {
+      "badge": "AI-Powered IoT Platform",
+      "title1": "Smart Energy,",
+      "title2": "Sustainable Future",
+      "description": "We intelligentize energy and create a sustainable future."
+    },
+    "slide2": {
+      "badge": "IoT Energy Solutions",
+      "title1": "Smart Energy,",
+      "title2": "Sustainable Future",
+      "description": "We intelligentize energy and create a sustainable future."
+    },
+    "slide3": {
+      "badge": "Sustainable Future",
+      "title1": "Smart Energy,",
+      "title2": "Sustainable Future",
+      "description": "We intelligentize energy and create a sustainable future."
+    },
     "getStarted": "Get Started",
     "learnMore": "Learn More"
   },
@@ -35,6 +49,26 @@
     "feature3": "Seamless IoT device integration",
     "feature4": "Predictive maintenance alerts",
     "learnMore": "Learn More About Us"
+  },
+  "solutions": {
+    "solution1": {
+      "number": "01",
+      "title": "Cost Efficiency",
+      "description": "Achieve energy cost reduction and revenue generation through Demand Response, reducing operational burden while maximizing efficiency.",
+      "cta": "Learn More"
+    },
+    "solution2": {
+      "number": "02",
+      "title": "ESG Leadership",
+      "description": "Strengthen global ESG assessment responsiveness through transparent carbon emission data management and sustainability reporting.",
+      "cta": "Learn More"
+    },
+    "solution3": {
+      "number": "03",
+      "title": "Digital Transformation",
+      "description": "Digital innovation in building management through 3D metaverse control and AI-powered automation for operational excellence.",
+      "cta": "Learn More"
+    }
   },
   "services": {
     "badge": "Our Services",

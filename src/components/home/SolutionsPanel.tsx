@@ -6,63 +6,46 @@ import {
   useMotionValueEvent,
 } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const solutions = [
   {
     id: 1,
-    number: "01",
-    title: "Cost Efficiency",
-    koreanTitle: "비용 효율성",
-    description:
-      "에너지 비용 절감과 수익 창출(DR)을 동시에 실현하여 경영 부담 완화.",
-    descriptionEn:
-      "Achieve energy cost reduction and revenue generation through Demand Response, reducing operational burden while maximizing efficiency.",
+    numberKey: "solutions.solution1.number",
+    titleKey: "solutions.solution1.title",
+    descriptionKey: "solutions.solution1.description",
+    ctaKey: "solutions.solution1.cta",
     video:
       "https://videos.pexels.com/video-files/3255275/3255275-uhd_2560_1440_25fps.mp4",
     theme: {
       accent: "#1E90FF",
       gradient: "from-blue-500/20 via-transparent to-transparent",
     },
-    cta: {
-      secondary: "Learn More",
-    },
   },
   {
     id: 2,
-    number: "02",
-    title: "ESG Leadership",
-    koreanTitle: "ESG 리더십",
-    description:
-      "탄소 배출량 데이터의 투명한 관리로 글로벌 ESG 평가 대응력 강화.",
-    descriptionEn:
-      "Strengthen global ESG assessment responsiveness through transparent carbon emission data management and sustainability reporting.",
+    numberKey: "solutions.solution2.number",
+    titleKey: "solutions.solution2.title",
+    descriptionKey: "solutions.solution2.description",
+    ctaKey: "solutions.solution2.cta",
     video:
       "https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_30fps.mp4",
     theme: {
       accent: "#4BA3FF",
       gradient: "from-sky-500/20 via-transparent to-transparent",
     },
-    cta: {
-      secondary: "Learn More",
-    },
   },
   {
     id: 3,
-    number: "03",
-    title: "Digital Transformation",
-    koreanTitle: "디지털 트랜스포메이션",
-    description:
-      "3D 메타버스 관제 및 AI 자동화를 통한 건물 관리의 디지털 혁신.",
-    descriptionEn:
-      "Digital innovation in building management through 3D metaverse control and AI-powered automation for operational excellence.",
+    numberKey: "solutions.solution3.number",
+    titleKey: "solutions.solution3.title",
+    descriptionKey: "solutions.solution3.description",
+    ctaKey: "solutions.solution3.cta",
     video:
       "https://videos.pexels.com/video-files/3141208/3141208-uhd_2560_1440_25fps.mp4",
     theme: {
       accent: "#60A5FA",
       gradient: "from-indigo-500/20 via-transparent to-transparent",
-    },
-    cta: {
-      secondary: "Learn More",
     },
   },
 ];
@@ -75,6 +58,7 @@ function SolutionSection({
   solution: (typeof solutions)[0];
   index: number;
 }) {
+  const { t } = useTranslation();
   const sectionRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -168,36 +152,25 @@ function SolutionSection({
                   className="text-8xl md:text-9xl font-black opacity-20"
                   style={{ color: solution.theme.accent }}
                 >
-                  {solution.number}
+                  {t(solution.numberKey)}
                 </span>
               </motion.div>
-
-              {/* Korean Title */}
-              <motion.h3
-                style={{ opacity, y: titleY, color: solution.theme.accent }}
-                className="text-lg md:text-xl font-medium mb-2"
-              >
-                {solution.koreanTitle}
-              </motion.h3>
 
               {/* Main Title */}
               <motion.h2
                 style={{ opacity, y: titleY }}
                 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
               >
-                {solution.title}
+                {t(solution.titleKey)}
               </motion.h2>
 
               {/* Description */}
               <motion.div
                 style={{ opacity, y: descY }}
-                className="space-y-4 mb-10"
+                className="mb-10"
               >
                 <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
-                  {solution.description}
-                </p>
-                <p className="text-base md:text-lg text-white/60 leading-relaxed max-w-2xl">
-                  {solution.descriptionEn}
+                  {t(solution.descriptionKey)}
                 </p>
               </motion.div>
 
@@ -207,10 +180,10 @@ function SolutionSection({
                 className="flex flex-wrap gap-4"
               >
                 <Link
-                  to="/services/green-energy"
+                  to="/services"
                   className="relative z-50 inline-flex items-center gap-3 px-8 py-4 rounded-full font-semibold text-white border-2 border-white/30 hover:border-white hover:bg-white/20 transition-all duration-300 hover:scale-105"
                 >
-                  {solution.cta.secondary}
+                  {t(solution.ctaKey)}
                   <svg
                     className="w-5 h-5 transition-transform group-hover:translate-x-1"
                     fill="none"
@@ -258,6 +231,8 @@ function SideNavigation({
   activeIndex: number;
   onNavigate: (index: number) => void;
 }) {
+  const { t } = useTranslation();
+
   return (
     <div className="absolute right-8 lg:right-12 xl:right-16 top-1/2 -translate-y-1/2 z-30 hidden lg:block pointer-events-auto">
       <div className="relative">
@@ -293,7 +268,7 @@ function SideNavigation({
                     activeIndex === index ? "text-white" : "text-white/70"
                   }`}
                 >
-                  {solution.title}
+                  {t(solution.titleKey)}
                 </span>
                 <span
                   className="text-sm font-bold transition-colors duration-300"
@@ -304,19 +279,9 @@ function SideNavigation({
                         : "rgba(255,255,255,0.5)",
                   }}
                 >
-                  {solution.number}
+                  {t(solution.numberKey)}
                 </span>
               </div>
-              {activeIndex === index && (
-                <motion.p
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  exit={{ opacity: 0, height: 0 }}
-                  className="mt-1 mr-8 text-xs text-white/50 text-right"
-                >
-                  {solution.koreanTitle}
-                </motion.p>
-              )}
             </button>
           ))}
         </div>

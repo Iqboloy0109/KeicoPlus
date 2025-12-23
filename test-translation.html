@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Translation Test</title>
+</head>
+<body>
+    <h2>English Translations:</h2>
+    <pre id="en"></pre>
+    
+    <h2>Korean Translations:</h2>
+    <pre id="ko"></pre>
+    
+    <script type="module">
+        import en from './src/i18n/locales/en.json' assert { type: 'json' };
+        import ko from './src/i18n/locales/ko.json' assert { type: 'json' };
+        
+        document.getElementById('en').textContent = JSON.stringify({
+            heroTitle: en.hero.slide1.title1 + ' ' + en.hero.slide1.title2,
+            solution1: en.solutions.solution1.title,
+            learnMore: en.hero.learnMore
+        }, null, 2);
+        
+        document.getElementById('ko').textContent = JSON.stringify({
+            heroTitle: ko.hero.slide1.title1 + ' ' + ko.hero.slide1.title2,
+            solution1: ko.solutions.solution1.title,
+            learnMore: ko.hero.learnMore
+        }, null, 2);
+    </script>
+</body>
+</html>
