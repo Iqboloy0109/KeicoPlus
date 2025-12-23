@@ -1,0 +1,31 @@
+services:
+  keicoplus-app:
+    container_name: keicoplus-app
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    ports:
+      - "6004:3003"
+    environment:
+      - NODE_ENV=production
+      - PORT=3003
+    networks:
+      - monorepo_network
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "require('http').get('http://localhost:3003', (r) => {process.exit(r.statusCode === 200 ? 0 : 1)})",
+        ]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+
+networks:
+  monorepo_network:
+    driver: bridge
