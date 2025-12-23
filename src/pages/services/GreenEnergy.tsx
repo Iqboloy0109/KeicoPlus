@@ -5,7 +5,8 @@ import { useTranslation } from "react-i18next";
 import { InquirySection } from "../../components/common";
 
 export default function GreenEnergy() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
 
   return (
     <div className="min-h-screen bg-black">
@@ -97,27 +98,28 @@ export default function GreenEnergy() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="space-y-12"
+            className="space-y-8 text-center md:text-left"
           >
-            {/* English Section */}
-            <div className="text-center md:text-left">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                {t('greenEnergy.feco.titleEn')}
-              </h2>
-              <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl">
-                {t('greenEnergy.feco.descriptionEn')}
-              </p>
-            </div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              {currentLanguage === 'ko' ? t('greenEnergy.feco.titleKo') : t('greenEnergy.feco.titleEn')}
+            </h2>
 
-            {/* Korean Section */}
-            <div className="text-center md:text-left pt-8 border-t border-gray-200">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                {t('greenEnergy.feco.titleKo')}
-              </h2>
+            {currentLanguage === 'ko' ? (
+              /* Korean Description */
               <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl">
                 {t('greenEnergy.feco.descriptionKo')}
               </p>
-            </div>
+            ) : (
+              /* English Descriptions */
+              <>
+                <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl">
+                  {t('greenEnergy.feco.descriptionEn')}
+                </p>
+                <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl">
+                  {t('greenEnergy.feco.descriptionEn2')}
+                </p>
+              </>
+            )}
           </motion.div>
         </div>
       </section>

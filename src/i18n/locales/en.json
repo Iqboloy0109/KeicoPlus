@@ -250,6 +250,47 @@
     }
   },
   "keicoPlus": {
+    "hero": {
+      "breadcrumb": {
+        "home": "Home",
+        "company": "Company",
+        "about": "About Keico Plus"
+      },
+      "title": "About KEICO PLUS",
+      "subtitle": "Smart Energy Solutions for a Sustainable Future",
+      "scrollDown": "Scroll Down"
+    },
+    "mainDescription": {
+      "title": "Carbon Neutrality, ESG Era",
+      "highlight": "Korea Energy Industry nurtures future industries based on 4th industrial revolution technology and realizes customer value.",
+      "paragraph1": "Overcoming the climate crisis is an important common task that all mankind must work together to solve, and the International Energy Agency (IEA) rates 'energy efficiency' as having the highest contribution. Now, mankind is facing the digital transformation era and must more actively improve energy demand efficiency and reduce energy costs.",
+      "paragraph2": "Korea Energy Industry has been devoted to research and development for a long time to be at the center of solving these challenges of the times, and as a result, we operate a total solution that reflects the environment of each consumer, comprehensively collects and analyzes information on the purpose and characteristics of operating devices, power data, etc., and optimizes energy consumption.",
+      "paragraph3": "In addition, our energy efficiency platform reflects not only the power consumption and standby power of electrical energy, but also the user's environment, device-specific characteristics, and operation patterns in real time to optimize energy, and contributes to reducing energy consumption costs and stabilizing national power supply and demand through strategic reduction and adjustment of power demand and load leveling.",
+      "highlightBox": "In the future, Korea Energy Industry Co., Ltd. promises to do its best to lead energy demand efficiency based on 4th industrial revolution technology and become a leader in new growth industries with new future technologies leading carbon neutrality."
+    },
+    "businessAreas": {
+      "badge": "Business Areas",
+      "title": "Main Business Areas",
+      "description": "KEICO PLUS provides comprehensive solutions for energy efficiency and eco-friendly energy transition",
+      "learnMore": "Learn More",
+      "areas": {
+        "zeb": {
+          "title": "ZEB Business",
+          "titleKo": "Zero Energy Building Business",
+          "description": "Zero Energy Building (ZEB) is a building where the sum of energy consumed and produced in the building is zero. KEICO PLUS implements energy self-sufficient buildings through high-efficiency insulation, airtight construction, and renewable energy facilities."
+        },
+        "re100": {
+          "title": "RE 100 Business",
+          "titleKo": "RE 100 Business",
+          "description": "RE100 is a global campaign in which companies commit to using 100% of their electricity from renewable energy. KEICO PLUS supports companies in achieving RE100 through renewable energy introduction consulting and PPA contract support such as solar and wind power."
+        },
+        "greenEnergy": {
+          "title": "Green Energy Business",
+          "titleKo": "Green Energy Business",
+          "description": "We provide one-stop solutions from solar power system design, construction, to maintenance. We support eco-friendly energy transition with various solutions such as Building Integrated Photovoltaic (BIPV), rooftop solar, and agrivoltaic systems."
+        }
+      }
+    },
     "inquiry": {
       "title": "Ask Anything",
       "description": "KEICO PLUS answers concisely and smartly.",
@@ -518,6 +559,7 @@
     "feco": {
       "titleEn": "FECO: AI Platform Opening the Future of Green Energy",
       "descriptionEn": "KEICO+ deploys a comprehensive green energy business that goes beyond building energy efficiency through the AI-based FECO platform, promoting renewable energy use and contributing to power grid stabilization.",
+      "descriptionEn2": "FECO is an integrated solution that simultaneously implements building energy Efficiency, Independence, and Flexibility through AI prediction and precision control.",
       "titleKo": "FECO: 그린 에너지의 미래를 여는 AI 플랫폼",
       "descriptionKo": "FECO는 AI 예측과 정밀 제어를 통해 건물 에너지의 효율성(Efficiency), 자립성(Independence), 유연성(Flexibility)을 동시에 구현하는 통합 솔루션입니다."
     },

@@ -2,9 +2,11 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ChevronRight, ChevronDown } from "lucide-react";
 import { useInView } from "react-intersection-observer";
+import { useTranslation } from "react-i18next";
 import { InquirySection } from "../../components/common";
 
 export default function KeicoPlus() {
+  const { t } = useTranslation();
   const { ref: mainDescriptionRef } = useInView({
     threshold: 0.2,
     triggerOnce: false,
@@ -14,31 +16,29 @@ export default function KeicoPlus() {
     threshold: 0.1,
     triggerOnce: false,
   });
+
   const businessAreas = [
     {
       id: 1,
-      title: "제로에너지건물 사업",
-      titleEn: "ZEB Business",
-      description:
-        "제로에너지건물(ZEB)은 건물에서 소비하는 에너지와 생산하는 에너지의 합이 0이 되는 건물입니다. KEICO PLUS는 고효율 단열, 기밀 시공, 신재생에너지 설비 등을 통해 에너지 자립형 건물을 구현합니다.",
+      titleKey: "keicoPlus.businessAreas.areas.zeb.title",
+      titleEnKey: "keicoPlus.businessAreas.areas.zeb.titleKo",
+      descriptionKey: "keicoPlus.businessAreas.areas.zeb.description",
       image:
         "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80",
     },
     {
       id: 2,
-      title: "RE 100 사업",
-      titleEn: "RE 100 Business",
-      description:
-        "RE100은 기업이 사용하는 전력 100%를 재생에너지로 충당하겠다는 글로벌 캠페인입니다. KEICO PLUS는 태양광, 풍력 등 재생에너지 도입 컨설팅과 PPA 계약 지원을 통해 기업의 RE100 달성을 지원합니다.",
+      titleKey: "keicoPlus.businessAreas.areas.re100.title",
+      titleEnKey: "keicoPlus.businessAreas.areas.re100.titleKo",
+      descriptionKey: "keicoPlus.businessAreas.areas.re100.description",
       image:
         "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1920&q=80",
     },
     {
       id: 3,
-      title: "그린에너지 사업",
-      titleEn: "Green Energy Business",
-      description:
-        "태양광 발전 시스템 설계, 시공, 유지보수까지 원스톱 솔루션을 제공합니다. 건물 일체형 태양광(BIPV), 지붕형 태양광, 영농형 태양광 등 다양한 솔루션으로 친환경 에너지 전환을 지원합니다.",
+      titleKey: "keicoPlus.businessAreas.areas.greenEnergy.title",
+      titleEnKey: "keicoPlus.businessAreas.areas.greenEnergy.titleKo",
+      descriptionKey: "keicoPlus.businessAreas.areas.greenEnergy.description",
       image:
         "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1920&q=80",
     },
@@ -94,12 +94,12 @@ export default function KeicoPlus() {
             className="flex items-center justify-center gap-2 text-sm text-white/60 mb-8"
           >
             <Link to="/" className="hover:text-white transition-colors">
-              Home
+              {t('keicoPlus.hero.breadcrumb.home')}
             </Link>
             <ChevronRight size={16} />
-            <span>Company</span>
+            <span>{t('keicoPlus.hero.breadcrumb.company')}</span>
             <ChevronRight size={16} />
-            <span className="text-white">About Keico Plus</span>
+            <span className="text-white">{t('keicoPlus.hero.breadcrumb.about')}</span>
           </motion.nav>
 
           {/* Title */}
@@ -109,7 +109,7 @@ export default function KeicoPlus() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight mb-6"
           >
-            About KEICO PLUS
+            {t('keicoPlus.hero.title')}
           </motion.h1>
 
           {/* Subtitle */}
@@ -119,7 +119,7 @@ export default function KeicoPlus() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl md:text-2xl lg:text-3xl text-white/80 max-w-3xl mx-auto"
           >
-            Smart Energy Solutions for a Sustainable Future
+            {t('keicoPlus.hero.subtitle')}
           </motion.p>
         </div>
 
@@ -132,7 +132,7 @@ export default function KeicoPlus() {
           className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white flex flex-col items-center gap-2 cursor-pointer z-20"
         >
           <span className="text-sm text-white/60 uppercase tracking-widest">
-            Scroll Down
+            {t('keicoPlus.hero.scrollDown')}
           </span>
           <motion.div
             animate={{ y: [0, 10, 0] }}
@@ -156,7 +156,7 @@ export default function KeicoPlus() {
               className="mb-16"
             >
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                탄소중립, ESG 시대
+                {t('keicoPlus.mainDescription.title')}
               </h2>
               <div className="w-20 h-1 bg-[#1E90FF] mt-6" />
             </motion.div>
@@ -171,8 +171,7 @@ export default function KeicoPlus() {
                 transition={{ duration: 0.6 }}
                 className="text-2xl md:text-3xl font-medium text-gray-900 leading-relaxed"
               >
-                한국에너지산업이 4차 산업기술을 기반으로 미래산업을 육성하고
-                고객의 가치를 실현합니다.
+                {t('keicoPlus.mainDescription.highlight')}
               </motion.p>
 
               {/* Divider */}
@@ -192,11 +191,7 @@ export default function KeicoPlus() {
                 transition={{ duration: 0.6 }}
                 className="text-lg md:text-xl text-gray-600 leading-relaxed"
               >
-                기후위기 극복은 전 인류가 합심하여 해결해야 할 중요한 공동
-                과제로서, 국제에너지기구(IEA)에서는 '에너지 효율화' 기여도를
-                가장 높게 평가하고 있습니다. 이제 인류는 디지털 전환시대를
-                맞이하여 에너지 수요를 보다 적극적으로 효율화하고 에너지
-                지출비용을 낮추어야합니다.
+                {t('keicoPlus.mainDescription.paragraph1')}
               </motion.p>
 
               {/* Paragraph 2 */}
@@ -207,11 +202,7 @@ export default function KeicoPlus() {
                 transition={{ duration: 0.6 }}
                 className="text-lg md:text-xl text-gray-600 leading-relaxed"
               >
-                한국에너지산업은 이러한 시대적 과제 해결의 중심에 서기 위해 오랜
-                기간 연구 개발에 매진해왔으며, 그 결과 각 소비자의 환경을
-                반영하고, 운용 기기의 용도와 특성, 전력 데이터 등에 관한 정보를
-                종합적으로 수집·분석하여 에너지 소비를 최적화하는 토탈 솔루션을
-                운영하고 있습니다.
+                {t('keicoPlus.mainDescription.paragraph2')}
               </motion.p>
 
               {/* Paragraph 3 */}
@@ -222,11 +213,7 @@ export default function KeicoPlus() {
                 transition={{ duration: 0.6 }}
                 className="text-lg md:text-xl text-gray-600 leading-relaxed"
               >
-                또한, 당사의 에너지 효율화 플랫폼은 전기에너지의 사용전력과
-                대기전력, 불필요 소모전력 뿐만 아니라 사용자의 환경과 기기별
-                특성 및 운용 패턴 등을 실시간 반영하여 에너지를 효율화하고 전력
-                수요의 전략적 저감과 조절, 부하 평준화 등을 통해 에너지 소비
-                원가를 절감하고 국가 전력 수급안정화에 기여하고 있습니다.
+                {t('keicoPlus.mainDescription.paragraph3')}
               </motion.p>
 
               {/* Highlighted Box */}
@@ -238,10 +225,7 @@ export default function KeicoPlus() {
                 className="bg-gradient-to-r from-[#1E90FF]/5 to-[#1E90FF]/10 border-l-4 border-[#1E90FF] p-8 rounded-r-xl mt-12"
               >
                 <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-                  앞으로도, (주)한국에너지산업은 4차 산업기술을 기반으로 에너지
-                  수요효율화에 앞장서고, 탄소중립을 선도하는 미래 신기술로
-                  신성장산업의 주역이 되도록 최선의 노력을 다할 것을
-                  약속드립니다.
+                  {t('keicoPlus.mainDescription.highlightBox')}
                 </p>
               </motion.div>
             </div>
@@ -262,14 +246,13 @@ export default function KeicoPlus() {
               className="text-center"
             >
               <span className="text-[#1E90FF] font-semibold text-sm uppercase tracking-wider">
-                Business Areas
+                {t('keicoPlus.businessAreas.badge')}
               </span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-4">
-                주요 비즈니스 영역
+                {t('keicoPlus.businessAreas.title')}
               </h2>
               <p className="text-white/60 mt-4 max-w-2xl mx-auto text-lg">
-                KEICO PLUS는 에너지 효율화와 친환경 에너지 전환을 위한 종합
-                솔루션을 제공합니다
+                {t('keicoPlus.businessAreas.description')}
               </p>
             </motion.div>
           </div>
@@ -295,7 +278,7 @@ export default function KeicoPlus() {
             >
               <img
                 src={area.image}
-                alt={area.title}
+                alt={t(area.titleKey)}
                 className="w-full h-full object-cover"
               />
               {/* Gradient Overlay */}
@@ -336,7 +319,7 @@ export default function KeicoPlus() {
                   transition={{ duration: 0.6, delay: 0.3 }}
                   className="text-[#1E90FF] font-semibold text-sm uppercase tracking-widest block mb-4"
                 >
-                  {area.titleEn}
+                  {t(area.titleEnKey)}
                 </motion.span>
 
                 {/* Title Korean */}
@@ -347,7 +330,7 @@ export default function KeicoPlus() {
                   transition={{ duration: 0.6, delay: 0.4 }}
                   className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight"
                 >
-                  {area.title}
+                  {t(area.titleKey)}
                 </motion.h3>
 
                 {/* Description */}
@@ -358,7 +341,7 @@ export default function KeicoPlus() {
                   transition={{ duration: 0.6, delay: 0.5 }}
                   className="text-lg md:text-xl text-white/80 leading-relaxed mb-10"
                 >
-                  {area.description}
+                  {t(area.descriptionKey)}
                 </motion.p>
 
                 {/* Button */}
@@ -373,7 +356,7 @@ export default function KeicoPlus() {
                     to="/services"
                     className="inline-flex items-center gap-3 px-8 py-4 bg-[#1E90FF] text-white font-semibold rounded-full hover:bg-[#1873CC] transition-all duration-300 group shadow-lg shadow-[#1E90FF]/30"
                   >
-                    자세히 보기
+                    {t('keicoPlus.businessAreas.learnMore')}
                     <ChevronRight
                       size={20}
                       className="group-hover:translate-x-1 transition-transform"
