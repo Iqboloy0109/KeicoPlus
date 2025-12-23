@@ -34,7 +34,7 @@ export default function CardStack() {
   useEffect(() => {
     const handleScroll = () => {
       const windowHeight = window.innerHeight;
-      cardsRef.current.forEach((card, index) => {
+      cardsRef.current.forEach((card) => {
         if (card) {
           const rect = card.getBoundingClientRect();
           const cardCenter = rect.top + rect.height / 2;
