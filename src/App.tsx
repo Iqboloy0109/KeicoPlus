@@ -3,6 +3,7 @@ import { Layout } from "./components/layout";
 import {
   Home,
   Technology,
+  Platform,
   News,
   Contact,
   Login,
@@ -35,6 +36,7 @@ function App() {
           <Route path="services/re100" element={<RE100 />} />
           <Route path="services/green-energy" element={<GreenEnergy />} />
           <Route path="technology" element={<Technology />} />
+          <Route path="platform" element={<Platform />} />
           <Route path="news" element={<News />} />
           <Route path="contact" element={<Contact />} />
           <Route path="login" element={<Login />} />
