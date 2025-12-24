@@ -708,5 +708,62 @@
         }
       ]
     }
+  },
+  "contact": {
+    "hero": {
+      "title": "문의하기",
+      "subtitle": "KEICO+ 무엇이든 물어보세요.",
+      "description": "문의 내용을 남겨 주시면 담당자가 확인하여 신속하게 답변 드리겠습니다."
+    },
+    "form": {
+      "category": {
+        "label": "문의 구분",
+        "placeholder": "문의 구분",
+        "options": {
+          "public": "공공기관",
+          "company": "기업",
+          "individual": "개인",
+          "recruitment": "채용 문의",
+          "other": "기타"
+        }
+      },
+      "name": {
+        "label": "이름",
+        "placeholder": "이름"
+      },
+      "company": {
+        "label": "회사명/기관명",
+        "placeholder": "회사명/기관명"
+      },
+      "phone": {
+        "label": "연락처",
+        "placeholder": "연락처"
+      },
+      "email": {
+        "label": "이메일",
+        "placeholder": "이메일"
+      },
+      "message": {
+        "label": "문의 내용",
+        "placeholder": "문의 내용을 입력해주세요"
+      },
+      "privacy": "개인정보 수집 및 이용에 동의합니다.",
+      "submit": "제출하기"
+    },
+    "map": {
+      "title": "KEICO+ 파주",
+      "address": {
+        "label": "주소",
+        "value": "경기도 파주시 문발로 115 파주출판도시"
+      },
+      "email": {
+        "label": "대표 이메일",
+        "value": "contact@keicoplus.com"
+      },
+      "phone": {
+        "label": "대표 전화",
+        "value": "+82-31-955-0000"
+      }
+    }
   }
 }

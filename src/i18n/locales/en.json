@@ -708,5 +708,62 @@
         }
       ]
     }
+  },
+  "contact": {
+    "hero": {
+      "title": "Contact Us",
+      "subtitle": "KEICO+ Ask us anything.",
+      "description": "Leave your inquiry and our team will review it and respond promptly."
+    },
+    "form": {
+      "category": {
+        "label": "Inquiry Type",
+        "placeholder": "Select inquiry type",
+        "options": {
+          "public": "Public Institution",
+          "company": "Company",
+          "individual": "Individual",
+          "recruitment": "Recruitment Inquiry",
+          "other": "Other"
+        }
+      },
+      "name": {
+        "label": "Name",
+        "placeholder": "Name"
+      },
+      "company": {
+        "label": "Company/Institution Name",
+        "placeholder": "Company/Institution Name"
+      },
+      "phone": {
+        "label": "Contact",
+        "placeholder": "Contact"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "Email"
+      },
+      "message": {
+        "label": "Inquiry",
+        "placeholder": "Please enter your inquiry"
+      },
+      "privacy": "I agree to the collection and use of personal information.",
+      "submit": "Submit"
+    },
+    "map": {
+      "title": "KEICO+ Paju",
+      "address": {
+        "label": "Address",
+        "value": "115 Munbal-ro, Paju-si, Gyeonggi-do, Paju Book City"
+      },
+      "email": {
+        "label": "Email",
+        "value": "contact@keicoplus.com"
+      },
+      "phone": {
+        "label": "Phone",
+        "value": "+82-31-955-0000"
+      }
+    }
   }
 }
