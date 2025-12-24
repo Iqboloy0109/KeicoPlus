@@ -130,7 +130,7 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <Link to="/services" className="btn-secondary text-center">
+              <Link to="/about/keico-plus" className="btn-secondary text-center">
                 {t("hero.learnMore")}
               </Link>
             </motion.div>
