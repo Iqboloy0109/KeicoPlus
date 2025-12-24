@@ -765,5 +765,14 @@
         "value": "+82-31-955-0000"
       }
     }
+  },
+  "news": {
+    "hero": {
+      "title": "News"
+    },
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next"
+    }
   }
 }
